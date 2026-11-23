@@ -28,7 +28,12 @@ public:
     juce::AudioProcessorEditor* createEditor() override;
     bool hasEditor() const override { return true; }
 
+    // 製品版は "POLYBRISK"、開発用のビルドは "POLYBRISK Dev" (D-078)。プラグインとしてビルドしていないとき (テスト) は製品名
+   #ifdef JucePlugin_Name
+    const juce::String getName() const override { return JucePlugin_Name; }
+   #else
     const juce::String getName() const override { return "POLYBRISK"; }
+   #endif
     bool acceptsMidi() const override { return true; }
     bool producesMidi() const override { return false; }
     bool isMidiEffect() const override { return false; }

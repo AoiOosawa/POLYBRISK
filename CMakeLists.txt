@@ -13,6 +13,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(POLYBRISK_COPY_PLUGIN "Copy built AU/VST3 into ~/Library/Audio/Plug-Ins" ON)
+
+# 開発用のビルドは、製品版とは別のプラグイン「POLYBRISK Dev」にする (D-078)。
+# インストーラーで入れた製品版 (/Library) と、開発用のコピー (~/Library) が、同じ名前・同じ識別子で重複しないようにするため。
+# 配布用 (scripts/package.sh) は OFF にして、製品の名前と識別子でビルドする。
+option(POLYBRISK_DEV_IDENTITY "Build as the separate plugin 'POLYBRISK Dev' (own name and IDs) instead of the release identity" ON)
 option(POLYBRISK_BUILD_TESTS "Build the unit test runner" ON)
 
 # ---------------------------------------------------------------------------
@@ -74,16 +79,26 @@ set(POLYBRISK_JUCE_DEFINITIONS
 
 # ---------------------------------------------------------------------------
 # Plugin: AU / VST3 / Standalone
-# 識別子は開発中の仮値 (docs/DECISIONS.md D-005)。配布前に必ず確定する。
 # ---------------------------------------------------------------------------
+# 製品版の識別子は確定 (D-077)。配布後に変えると、利用者の DAW のプロジェクトからプラグインが見つからなくなる。
+# メーカーコード Chbw は、CHEEBOW のほかのプラグインと共通。
+# プラグインコードは「先頭だけ大文字」(GarageBand の要件。JUCE の CMake API のドキュメントを参照)。
+if(POLYBRISK_DEV_IDENTITY)
+    set(POLYBRISK_PRODUCT_NAME "POLYBRISK Dev")
+    set(POLYBRISK_BUNDLE_ID "info.cheebow.polybrisk.dev")
+    set(POLYBRISK_PLUGIN_CODE Pbrd)
+else()
+    set(POLYBRISK_PRODUCT_NAME "POLYBRISK")
+    set(POLYBRISK_BUNDLE_ID "info.cheebow.polybrisk")
+    set(POLYBRISK_PLUGIN_CODE Pbrk)
+endif()
+
 juce_add_plugin(PolyBrisk
-    PRODUCT_NAME "POLYBRISK"
+    PRODUCT_NAME "${POLYBRISK_PRODUCT_NAME}"
     COMPANY_NAME "CHEEBOW"
-    # 識別子は確定 (D-077)。配布後に変えると、利用者の DAW のプロジェクトからプラグインが見つからなくなる。
-    # メーカーコード Chbw は、CHEEBOW のほかのプラグインと共通
-    BUNDLE_ID "info.cheebow.polybrisk"
+    BUNDLE_ID "${POLYBRISK_BUNDLE_ID}"
     PLUGIN_MANUFACTURER_CODE Chbw
-    PLUGIN_CODE Pbrk
+    PLUGIN_CODE ${POLYBRISK_PLUGIN_CODE}
     FORMATS AU VST3 Standalone
     IS_SYNTH TRUE
     NEEDS_MIDI_INPUT TRUE
@@ -97,7 +112,8 @@ juce_add_plugin(PolyBrisk
 
 target_sources(PolyBrisk PRIVATE ${POLYBRISK_SHARED_SOURCES})
 target_include_directories(PolyBrisk PRIVATE src)
-target_compile_definitions(PolyBrisk PUBLIC ${POLYBRISK_JUCE_DEFINITIONS})
+target_compile_definitions(PolyBrisk PUBLIC ${POLYBRISK_JUCE_DEFINITIONS}
+    POLYBRISK_DEV_IDENTITY=$<BOOL:${POLYBRISK_DEV_IDENTITY}>)   # 開発用のビルドは、画面のロゴの横に DEV と出す
 target_link_libraries(PolyBrisk
     PRIVATE
         polybrisk_dsp

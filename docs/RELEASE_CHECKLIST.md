@@ -57,4 +57,4 @@ scripts/package.sh                   # Universal でビルド → 署名 → 公
 
 出来上がった `build/dist/package/POLYBRISK-<version>-macOS.pkg` を GitHub Releases に置く。できれば、開発環境のない別の Mac でインストールし、DAW で読み込みと発音を確かめる。
 
-**開発機での注意**: インストーラーは `/Library/Audio/Plug-Ins/` に入れる。開発用のビルド（`scripts/build.sh`）は `~/Library/Audio/Plug-Ins/` にコピーするので、両方があると DAW に同じプラグインが 2 つ見える。インストーラーを試すときは、`~/Library` 側の `POLYBRISK.vst3` と `POLYBRISK.component` を消す。
+**開発用のビルドとの関係**: インストーラーは製品版「POLYBRISK」を `/Library/Audio/Plug-Ins/` に入れる。開発用のビルド（`scripts/build.sh`）は、別のプラグイン「POLYBRISK Dev」を `~/Library/Audio/Plug-Ins/` にコピーする。名前も識別子も違うので、両方を入れても重複しない（D-078）。インストール後の製品版の AU は `auval -v aumu Pbrk Chbw` で検証できる。

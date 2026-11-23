@@ -1092,3 +1092,26 @@ Pad / Strings は既存の音色を移しただけだったので、新しい音
 - **訂正**: 2026-11-21 の記録に「Developer ID Installer 証明書が見当たらない」と書いたのは誤りだった。署名用の証明書だけを列挙する方法で調べたため、インストーラー用の証明書が表示されなかった。実際には、この開発機に Developer ID Application と Developer ID Installer の両方がある（FXtend のインストーラーは、それで署名・公証されている）。
 - **まだ行っていないこと**: 署名と公証（ユーザーの Developer ID を使い、Apple へ送信する操作なので、実行の前にユーザーに確認する）、インストールの実行、GitHub Releases への掲載、製品ページへのダウンロードの導線、最初に配布するバージョン番号の決定（いまは 0.1.0）。Intel Mac の実機での確認。
 
+## D-078 開発用のビルドは、別のプラグイン「POLYBRISK Dev」にする（2026-11-23、ユーザーの指摘）
+
+- **経緯**: ユーザーの指摘「インストーラでインストールすると、デバッグ用に ~ 下に入れたプラグインと重複するんだけど、あれ、どうにかできない？」。開発用のビルドは `~/Library/Audio/Plug-Ins/` に、インストーラーは `/Library/Audio/Plug-Ins/` に入れる。名前も識別子も同じプラグインが 2 か所にあると、DAW にはどちらが読み込まれているのか区別がつかない。
+- **示した 2 案**: A = 開発用のビルドを別のプラグインにする / B = 開発用のビルドをプラグインフォルダーに入れない。ユーザーが **A** を選んだ。
+- **決定**:
+
+| | 製品版（配布用） | 開発用 |
+|---|---|---|
+| 作り方 | `scripts/package.sh`（`POLYBRISK_DEV_IDENTITY=OFF`） | `scripts/build.sh`（既定） |
+| 名前 | POLYBRISK | **POLYBRISK Dev** |
+| Bundle ID | `info.cheebow.polybrisk` | `info.cheebow.polybrisk.dev` |
+| AU の識別子 | `aumu Pbrk Chbw` | `aumu Pbrd Chbw` |
+| ファイル名 | `POLYBRISK.vst3` など | `POLYBRISK Dev.vst3` など |
+| 画面 | ロゴのみ | ロゴの横に `DEV` の印 |
+| 入る場所 | `/Library/Audio/Plug-Ins/`、`/Applications` | `~/Library/Audio/Plug-Ins/`（ビルド後に自動コピー） |
+
+- **共通のもの**: コード、音、パラメーター、ユーザープリセットと設定の場所（`~/Library/Application Support/POLYBRISK`）。
+- **割り切ったこと**: 開発用で保存した DAW のプロジェクトは、製品版では開けない（識別子が違う）。開発用はテスト用と割り切る。
+- **実装**: CMake のオプション `POLYBRISK_DEV_IDENTITY`（既定 ON）で、名前・Bundle ID・プラグインコードを切り替える。`scripts/package.sh` は OFF でビルドし、できた名前が製品版でなければ止まる。`scripts/validate.sh` は、識別子をスクリプトに書かず、ビルドした AU の `Info.plist` から読む。プラグインコードは「先頭だけ大文字」の決まり（GarageBand の要件）に合わせて `Pbrd` とした。
+- **片付け**: それまでの開発用のコピー（製品版の名前と識別子で `~/Library/Audio/Plug-Ins/` に入っていた `POLYBRISK.vst3` と `POLYBRISK.component`）を削除した。残っていると、インストーラーで入れた製品版と重複するため。
+- **確かめたこと**: 開発用のビルドで Debug / Release のテスト 100 % 合格、`auval -v aumu Pbrd Chbw` と pluginval（strictness 10）合格。配布用のビルドは、名前が POLYBRISK、識別子が `info.cheebow.polybrisk` / `Pbrk` / `Chbw`、Universal のままで、`DEV` の印が入っていないこと。
+- **未確認**: 開発用の画面での `DEV` の印の見た目（画面画像の書き出しは、プラグインとしてのビルドではないので印が出ない）。
+

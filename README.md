@@ -30,9 +30,11 @@ scripts/build.sh Release    # 片方だけ
 
 | 形式 | パス |
 |---|---|
-| VST3 | `VST3/POLYBRISK.vst3` |
-| AU | `AU/POLYBRISK.component` |
-| Standalone | `Standalone/POLYBRISK.app` |
+| VST3 | `VST3/POLYBRISK Dev.vst3` |
+| AU | `AU/POLYBRISK Dev.component` |
+| Standalone | `Standalone/POLYBRISK Dev.app` |
+
+**開発用のビルドは「POLYBRISK Dev」という別のプラグインになります。** 名前も識別子も製品版（インストーラーで入れる「POLYBRISK」）と違うので、両方を入れても重複せず、DAW には別々のプラグインとして並びます。画面のロゴの横には `DEV` と出ます。ユーザープリセットと設定は、製品版と共通です（`~/Library/Application Support/POLYBRISK`）。開発用で保存した DAW のプロジェクトは、製品版では開けません。
 
 ビルド後、AU と VST3 は `~/Library/Audio/Plug-Ins/Components` と `~/Library/Audio/Plug-Ins/VST3` へ自動コピーされます（最後にビルドした構成が残ります）。コピーしたくない場合:
 
@@ -52,11 +54,11 @@ scripts/package.sh          # インストーラー（Universal の .pkg）を b
 
 ## 動かしてみる
 
-- **Standalone**: `open build/Release/PolyBrisk_artefacts/Release/Standalone/POLYBRISK.app`
+- **Standalone**: `open "build/Release/PolyBrisk_artefacts/Release/Standalone/POLYBRISK Dev.app"`
   ウインドウ左上の **Options → Audio/MIDI Settings…** で出力デバイスと MIDI 入力を選び、MIDI キーボードを弾きます。
   画面下の鍵盤をクリックして試奏できます。
-- **Cubase**: VST3 を再スキャンし、Instrument Track に POLYBRISK を挿入。
-- **Logic Pro**: Audio Units の一覧（POLYBRISK > POLYBRISK）から Software Instrument として挿入。
+- **Cubase**: VST3 を再スキャンし、Instrument Track に POLYBRISK Dev を挿入。
+- **Logic Pro**: Audio Units の一覧（CHEEBOW > POLYBRISK Dev）から Software Instrument として挿入。
 
 使い方は [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) を参照してください。上部のプリセット名をクリックするとブラウザーが開きます。
 

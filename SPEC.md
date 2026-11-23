@@ -1,4 +1,4 @@
-# POLYBRISK — 製品・技術仕様書 (Draft v0.28)
+# POLYBRISK — 製品・技術仕様書 (Draft v0.29)
 
 - **状態**: 実装可能な初版仕様。未決定の項目には `[暫定]` または `[要決定]` を付ける。
 - **製品名**: POLYBRISK（決定済み）
@@ -28,6 +28,7 @@
 - **改訂**: v0.26 (2026-11-23) — ヘッダーに**出力メーター**を追加（D-071、§13）。画面の文言の英語 / 日本語の切り替えは試作して取りやめ、画面は英語のみ（D-070）。
 - **改訂**: v0.27 (2026-11-23) — ソースコードを GitHub で公開し、製品ページを GitHub Pages で公開した（D-075、§18）。**ホストのキー操作を横取りしない**: キーを受け取るのは文字の入力欄だけ（D-076、§13）。
 - **改訂**: v0.28 (2026-11-23) — 配布の方針を決定（D-077、§1 / §18）: ライセンスは **AGPL-3.0**、識別子を確定（`info.cheebow.polybrisk` / `Chbw` / `Pbrk`）、対応環境は **macOS 12 以降・Apple Silicon と Intel（Universal）**、配布はインストーラー（`.pkg`）。
+- **改訂**: v0.29 (2026-11-23) — 開発用のビルドを、製品版とは別のプラグイン「POLYBRISK Dev」にした（D-078、§1）。製品の仕様の変更はない。
 - **目的**: Claude Code で段階的に実装できる macOS 用ポリフォニック・シンセサイザーを作る。
 - **想定用途**: J-POP、アイドルポップス、シンセポップ、ダンスポップで使う、明るく輪郭の強い SuperSAW / Synth Brass / Stab / Bright Poly / Pluck。
 - **設計哲学**: 選べば使える実戦的なプリセット。普段は Simple、詳細は Advanced。同一DSP・同一状態を二つの表示で操作する。複雑なモジュレーションマトリクスは不要。
@@ -69,6 +70,7 @@
 | 対象macOS | macOS 12 以降（D-077） |
 | CPU | Apple Silicon と Intel（Universal）。配布用は Universal でビルドする。Intel は Rosetta 上の自動テストまでで、実機では未確認（D-077） |
 | 識別子 | Bundle ID `info.cheebow.polybrisk`、AU のメーカーコード `Chbw`、プラグインコード `Pbrk`。**配布後は変更しない**（D-077） |
+| 開発用のビルド | 別のプラグイン「POLYBRISK Dev」（Bundle ID `info.cheebow.polybrisk.dev`、プラグインコード `Pbrd`）。製品版と重複しないようにするため。配布用のビルドだけが製品版の名前と識別子を使う（D-078） |
 | ライセンス | GNU AGPL v3.0（`LICENSE`、`THIRD_PARTY_NOTICES.md`） |
 | 配布 | インストーラー（`.pkg`）。VST3 / Audio Unit / Standalone アプリを選んで入れられる。Developer ID で署名し、Apple の公証を受ける |
 | DAW検証 | Cubase を優先、可能なら Logic Pro、JUCE AudioPluginHost |

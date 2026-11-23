@@ -66,7 +66,7 @@ scripts/package.sh          # インストーラー (.pkg) の作成
 
 | 項目 | 状態 |
 |---|---|
-| `auval -v aumu Pbrk Chbw`（識別子の確定前は `aumu Pbk1 Pbrk`。D-077） | ✅ 2026-11-23 Release（確定した識別子）: AU VALIDATION SUCCEEDED |
+| `scripts/validate.sh`（auval + pluginval）。開発用のビルドは `aumu Pbrd Chbw`（POLYBRISK Dev、D-078）、製品版は `aumu Pbrk Chbw`（D-077） | ✅ 2026-11-23 Release: 開発用のビルドで AU VALIDATION SUCCEEDED、pluginval（strictness 10）合格。製品版の識別子でも、D-078 の前に同じ検証が合格 |
 | pluginval（VST3 / AU、strictness 5、`/Applications/pluginval.app`） | ✅ 2026-11-21 Release（最終コード）: strictness 5 と 10 の両方で VST3 / AU とも SUCCESS（AU で警告 `Current program is -1` が 1 件、合否には影響なし） |
 
 ## DAW での手動検証（SPEC §15）

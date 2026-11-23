@@ -34,6 +34,7 @@ rm -rf "$ARTEFACTS"        # 前の名前やバージョンの成果物を残さ
 cmake -S "$ROOT" -B "$BUILD" \
       -DCMAKE_BUILD_TYPE=Release \
       "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" \
+      -DPOLYBRISK_DEV_IDENTITY=OFF \
       -DPOLYBRISK_COPY_PLUGIN=OFF \
       -DPOLYBRISK_BUILD_TESTS=OFF > "$BUILD/configure.log" 2>&1 || { tail -30 "$BUILD/configure.log"; exit 1; }
 cmake --build "$BUILD" --target PolyBrisk_VST3 PolyBrisk_AU PolyBrisk_Standalone \
@@ -43,6 +44,7 @@ VST3="$(ls -d "$ARTEFACTS"/VST3/*.vst3 | head -1)"
 AU="$(ls -d "$ARTEFACTS"/AU/*.component | head -1)"
 APP="$(ls -d "$ARTEFACTS"/Standalone/*.app | head -1)"
 NAME="$(basename "$VST3" .vst3)"
+[ "$NAME" = "POLYBRISK" ] || { echo "製品版の名前ではありません: $NAME (POLYBRISK_DEV_IDENTITY=OFF でビルドされていない)" >&2; exit 1; }
 BUNDLE_ID="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Contents/Info.plist")"
 
 for bundle in "$VST3" "$AU" "$APP"; do

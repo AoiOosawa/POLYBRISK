@@ -215,6 +215,16 @@ void PolyBriskAudioProcessorEditor::Content::paint (juce::Graphics& g)
     g.setGradientFill (juce::ColourGradient (colours::accentWarm, 56.0f, 0.0f, colours::accentHot, 190.0f, 0.0f, false));
     g.setFont (font (22.0f, true));
     g.drawText ("POLYBRISK", 56, 0, 150, headerHeight, juce::Justification::centredLeft);
+
+   #if defined (POLYBRISK_DEV_IDENTITY) && POLYBRISK_DEV_IDENTITY
+    // 開発用のビルド (POLYBRISK Dev): 製品版と見分けられるように、ロゴの横に印を出す (D-078)
+    const juce::Rectangle<float> badge (166.0f, static_cast<float> (headerHeight) * 0.5f - 8.0f, 32.0f, 16.0f);
+    g.setColour (colours::cyan.withAlpha (0.18f));
+    g.fillRoundedRectangle (badge, 4.0f);
+    g.setColour (colours::cyan);
+    g.setFont (font (10.0f, true));
+    g.drawText ("DEV", badge, juce::Justification::centred);
+   #endif
 }
 
 void PolyBriskAudioProcessorEditor::Content::resized()
