@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(700px 360px at 50% -40px, rgba(255, 106, 60, 0.30), transparent 70%),
+      radial-gradient(520px 300px at 88% 10%, rgba(138, 107, 255, 0.16), transparent 70%),
+      #0d0e17;
+    font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  }
+  .brand { position: absolute; top: 34px; left: 0; width: 1200px; display: flex; align-items: center; justify-content: center; gap: 22px; }
+  .brand svg { width: 150px; height: auto; }
+  .brand span {
+    font-size: 78px; font-weight: 800; font-style: italic; letter-spacing: 0.05em; line-height: 1;
+    background: linear-gradient(90deg, #ffd23c, #ff6a3c 55%, #ff3c8e); -webkit-background-clip: text; background-clip: text; color: transparent;
+    padding-right: 10px;
+  }
+  .shot {
+    position: absolute; top: 170px; left: 150px; width: 900px; height: 520px; overflow: hidden;
+    border-radius: 18px 18px 0 0; border: 1px solid rgba(255, 255, 255, 0.14); border-bottom: 0;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  }
+  .shot img { display: block; width: 900px; height: auto; }
+</style></head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="pb-saw" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#ffd23c"/><stop offset="0.55" stop-color="#ff6a3c"/><stop offset="1" stop-color="#ff3c8e"/>
+      </linearGradient>
+      <symbol id="pb-mark" viewBox="0 0 680 420">
+        <g fill="none" stroke-linejoin="round" stroke-linecap="round" transform="translate(-172 -316)">
+          <path d="M196 598 L374 346 L374 598 L552 346 L552 598 L730 346 L730 598" stroke="#3cd6ff" stroke-opacity="0.55" stroke-width="34"/>
+          <path d="M250 706 L462 438 L462 706 L674 438 L674 706 L828 511" stroke="#8a6bff" stroke-opacity="0.6" stroke-width="34"/>
+          <path d="M214 656 L410 388 L410 656 L606 388 L606 656 L802 388 L802 656" stroke="url(#pb-saw)" stroke-width="52"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+  <div class="brand"><svg viewBox="0 0 680 420"><use href="#pb-mark"/></svg><span>POLYBRISK</span></div>
+  <div class="shot"><img src="../site/assets/screens/polybrisk_simple.png" alt=""></div>
+</body></html>

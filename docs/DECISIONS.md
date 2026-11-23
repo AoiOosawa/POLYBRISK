@@ -1132,3 +1132,10 @@ Pad / Strings は既存の音色を移しただけだったので、新しい音
 - **公開した版の確認**（同日、ユーザー）: インストールした製品版「POLYBRISK」を DAW に読み込み、音が出ることと、クリックしたあとにスペースキーで再生・停止ができることを確かめ、問題なしとした（どの DAW かは未記入）。
 - **まだ行っていないこと**: 開発環境のない別の Mac でのインストール、Intel Mac の実機での確認。
 
+## D-080 製品ページに OGP（リンクを貼ったときの表示）を追加（2026-11-23、ユーザーの質問から）
+
+- **経緯**: ユーザーの質問「ogp ってあるんだっけ？」。製品ページには OGP のタグがなかった（FXtend のページにはある）。
+- **決定**: FXtend のページと同じ項目を入れる: `og:title`、`og:description`、`og:image`（1200×630）、`og:url`、`og:type`、`og:site_name`、`og:locale`、X（Twitter）用の `twitter:card`（`summary_large_image`）ほか、`canonical`。あわせて、検索結果に出る説明文（`description`）を、いまの製品ページの言い回しに合わせて直した。
+- **画像**: `site/assets/og.png`。ロゴとワードマークの下に、Simple の画面を置いた（FXtend の画像と同じ構成）。`scripts/make_og_image.sh` が、`tools/og_image.html` を Google Chrome のヘッドレスモードで PNG にする。画面の見た目を変えたら、画面画像を更新してから作り直す。
+- **未確認**: 実際の SNS やチャットでの表示（公開後に、各サービスがページを読みに来て初めて確かめられる）。
+
