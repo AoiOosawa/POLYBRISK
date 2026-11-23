@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.22)
 
-# 対象環境 (SPEC §1 / docs/DECISIONS.md D-003, D-004)
-set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum macOS version")
+# 対象環境 (SPEC §1 / docs/DECISIONS.md D-077)。project() より前に設定する。
+# 開発用のビルドは arm64 だけ (速い)。配布用は scripts/package.sh が arm64 + x86_64 の Universal でビルドする。
+set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "Minimum macOS version")
 set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "Target architectures")
 
 project(PolyBrisk VERSION 0.1.0 LANGUAGES C CXX)
@@ -78,9 +79,11 @@ set(POLYBRISK_JUCE_DEFINITIONS
 juce_add_plugin(PolyBrisk
     PRODUCT_NAME "POLYBRISK"
     COMPANY_NAME "CHEEBOW"
-    BUNDLE_ID "com.polybrisk.polybrisk"
-    PLUGIN_MANUFACTURER_CODE Pbrk
-    PLUGIN_CODE Pbk1
+    # 識別子は確定 (D-077)。配布後に変えると、利用者の DAW のプロジェクトからプラグインが見つからなくなる。
+    # メーカーコード Chbw は、CHEEBOW のほかのプラグインと共通
+    BUNDLE_ID "info.cheebow.polybrisk"
+    PLUGIN_MANUFACTURER_CODE Chbw
+    PLUGIN_CODE Pbrk
     FORMATS AU VST3 Standalone
     IS_SYNTH TRUE
     NEEDS_MIDI_INPUT TRUE

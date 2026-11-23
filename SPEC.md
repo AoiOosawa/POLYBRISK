@@ -1,4 +1,4 @@
-# POLYBRISK — 製品・技術仕様書 (Draft v0.27)
+# POLYBRISK — 製品・技術仕様書 (Draft v0.28)
 
 - **状態**: 実装可能な初版仕様。未決定の項目には `[暫定]` または `[要決定]` を付ける。
 - **製品名**: POLYBRISK（決定済み）
@@ -27,6 +27,7 @@
 - **改訂**: v0.25 (2026-11-23) — コード全体の調査（バグ・安全性・整理）と修正（D-068）。仕様に関わる変更: **Output Gain はマクロの割当先にできない**、ヘッダーの Save は読み込んだファイルへ上書きする、Delete は 2 回押し、プリセットの ID は一覧の中で一意。**Drive の Mix は、原音と歪ませた音の位相をそろえて混ぜる**（D-069、§8.1。Drive を Mix 100 % 未満で使う 25 音色の高域が変わった）。
 - **改訂**: v0.26 (2026-11-23) — ヘッダーに**出力メーター**を追加（D-071、§13）。画面の文言の英語 / 日本語の切り替えは試作して取りやめ、画面は英語のみ（D-070）。
 - **改訂**: v0.27 (2026-11-23) — ソースコードを GitHub で公開し、製品ページを GitHub Pages で公開した（D-075、§18）。**ホストのキー操作を横取りしない**: キーを受け取るのは文字の入力欄だけ（D-076、§13）。
+- **改訂**: v0.28 (2026-11-23) — 配布の方針を決定（D-077、§1 / §18）: ライセンスは **AGPL-3.0**、識別子を確定（`info.cheebow.polybrisk` / `Chbw` / `Pbrk`）、対応環境は **macOS 12 以降・Apple Silicon と Intel（Universal）**、配布はインストーラー（`.pkg`）。
 - **目的**: Claude Code で段階的に実装できる macOS 用ポリフォニック・シンセサイザーを作る。
 - **想定用途**: J-POP、アイドルポップス、シンセポップ、ダンスポップで使う、明るく輪郭の強い SuperSAW / Synth Brass / Stab / Bright Poly / Pluck。
 - **設計哲学**: 選べば使える実戦的なプリセット。普段は Simple、詳細は Advanced。同一DSP・同一状態を二つの表示で操作する。複雑なモジュレーションマトリクスは不要。
@@ -65,8 +66,11 @@
 | プラグイン | AU (`.component`)、VST3 (`.vst3`) |
 | Standalone | macOS アプリ (`POLYBRISK.app`)。オーディオ/MIDI デバイス設定、状態の永続化、画面内鍵盤（Phase 5） |
 | 用途 | MIDI入力・ステレオ音声出力の Instrument。音声入力不要 |
-| 対象macOS | macOS 13以降 `[暫定]` |
-| CPU | Apple Silicon を第一ターゲット。Universal binary はビルド環境で検証して判断 `[暫定]` |
+| 対象macOS | macOS 12 以降（D-077） |
+| CPU | Apple Silicon と Intel（Universal）。配布用は Universal でビルドする。Intel は Rosetta 上の自動テストまでで、実機では未確認（D-077） |
+| 識別子 | Bundle ID `info.cheebow.polybrisk`、AU のメーカーコード `Chbw`、プラグインコード `Pbrk`。**配布後は変更しない**（D-077） |
+| ライセンス | GNU AGPL v3.0（`LICENSE`、`THIRD_PARTY_NOTICES.md`） |
+| 配布 | インストーラー（`.pkg`）。VST3 / Audio Unit / Standalone アプリを選んで入れられる。Developer ID で署名し、Apple の公証を受ける |
 | DAW検証 | Cubase を優先、可能なら Logic Pro、JUCE AudioPluginHost |
 | サンプルレート | 44.1 / 48 / 88.2 / 96 kHz（少なくとも） |
 | バッファ | 32〜2048 samplesを対象、可変ブロック長にも対応 |
@@ -708,14 +712,14 @@ PolyBrisk/
 
 以下は**開発開始の阻害要因ではない**。記載の暫定値で実装を始めてよい。変更時は `docs/DECISIONS.md` に記録。
 
-1. **プラグイン識別子、ロゴ・配色** — 製品名 POLYBRISK とメーカー名 CHEEBOW は決定済み（D-005）。Bundle ID・AU製造者コード/プラグインコード等は配布前に確定（**公開後は変更不可**。`docs/RELEASE_CHECKLIST.md`）。ロゴ・配色は暫定案を採用済み（D-013）で、配布前に商標確認とあわせて確定。
-2. **最低macOS、Intel Macサポート、販売/公開形態** — 当面Apple Silicon/macOS 13+、ライセンス確認。
+1. **ロゴ・配色、製品名の商標確認** — 識別子は確定した（D-077）。ロゴ・配色は暫定案を採用済み（D-013）。名称の衝突・商標の調査は未実施。
+2. **Intel Mac の実機確認** — macOS 12 以降・Universal・無償（AGPL-3.0）で配布すると決めた（D-077）。Intel Mac の実機では未確認。
 3. **DSPの音質チューニング** — Filter各タイプ、SuperSAWのDetune曲線、Driveの倍音、Chorus/FXの設計。実装後のAB試聴で確定。
 4. **プリセット制作** — 128音色の完成はソフト開発とは別に音色設計と試聴が必要。24→64→128の段階を採る。
 5. **MIDI Learnの保存単位** — 初期はプリセット単位。Globalへ拡張の余地を残す。
 6. **RHYTHM の `[暫定]` 項目** — Gate Smooth の既定 3 ms、初期収録パターン、Arp の Restart 既定（Note On）、RHYTHM 独立バイパスの有無、DAW 停止時の Arp の扱い、マルチチャンネル MIDI の扱い、パターン上書き時の Undo/確認。Phase 4.5 で確定する。
 7. **製品紹介ページの公開先** — GitHub Pages で公開済み（<https://cheebow.github.io/POLYBRISK/>、D-075）。独自ドメインは未定。
-8. **JUCE のライセンスと配布形態** — AGPLv3 か商用か（D-002）。署名・公証はこの判断と識別子の確定後に行う。Developer ID Installer 証明書の発行が必要。
+8. **署名・公証とリリース** — ライセンスは AGPL-3.0 に決定（D-077）。インストーラーへの署名と公証、GitHub Releases への掲載は、ユーザーの指示で行う。
 9. **Factory 128 音色の仕上げ** — 数は目標に届いた（D-064）。128 音色とも Standalone で試聴済み。近いと測定された組の聴き比べも一巡した（D-066）。残っているのは、DAW 上での試聴。
 
 ## 19. 作業ルール

@@ -3,14 +3,14 @@
 POLYBRISK は、SuperSAW・Synth Brass・Stab を速く作るための macOS 用ポリフォニック・シンセサイザーです。
 このガイドは開発中のビルド（v0.1.0）に対応しています。
 
-> **お読みください**: このビルドは未リリースです。自動テストと検証ツール（auval / pluginval）は通っていますが、DAW 上での動作確認はまだ済んでいません（収録音色は Standalone で一通り試聴しています）。
+> **お読みください**: 自動テストと検証ツール（auval / pluginval）は通っています。DAW での動作は、Cubase（VST3）で発音・保存と復元・テンポ同期・オートメーション・書き出しを、Logic Pro（Audio Unit）で読み込みと発音を確かめています。収録音色は Standalone で一通り試聴しています。
 
 ## 1. 動作環境
 
 | 項目 | 内容 |
 |---|---|
-| OS | macOS 13 以降 |
-| CPU | Apple Silicon |
+| OS | macOS 12 以降 |
+| CPU | Apple Silicon。Intel Mac でも動くように作っていますが、実機ではまだ試せていません |
 | 形式 | Audio Unit（Logic Pro など）、VST3（Cubase など）、Standalone アプリ |
 | 入出力 | MIDI 入力、ステレオ出力（音声入力なし） |
 | サンプルレート | 44.1 / 48 / 88.2 / 96 kHz |
@@ -19,7 +19,7 @@ Cubase は Audio Unit に対応していないため、Cubase では VST3 を使
 
 ## 2. インストール
 
-インストーラー（`.pkg`）を実行すると、次の場所に入ります。
+インストーラー（`.pkg`）を開き、画面の案内に沿って進めてください。Audio Unit、VST3、Standalone アプリの中から、入れたいものを選べます。次の場所に入ります。
 
 | 形式 | 場所 |
 |---|---|

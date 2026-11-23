@@ -8,13 +8,13 @@ SuperSAW / Synth Brass / Stab に特化した macOS 用ポリフォニック・�
 - 開発ルール: [`CLAUDE.md`](CLAUDE.md)
 - 設計: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) / パラメーター: [`docs/PARAMETER_IDS.md`](docs/PARAMETER_IDS.md) / 判断ログ: [`docs/DECISIONS.md`](docs/DECISIONS.md) / テスト: [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md)
 
-**現在の状態: 全フェーズの実装と自動テストまで完了。配布はまだできません。** 16 音ポリフォニー、OSC A/B とユニゾン、3 キャラクターのフィルター、Transient、ピッチベンド / ビブラート、4 マクロ（MIDI Learn）、LFO、Mono / Legato とグライド、Sub / Noise、FX 7 種、Trance Gate（ステレオ対応）/ Arpeggiator、Simple / Advanced の UI、プリセットブラウザー、Factory 128 音色が動きます。Cubase（VST3）では、発音・プロジェクトの保存と復元・テンポ同期・オートメーション・書き出しを確認済みです。Logic Pro（AU）では、読み込みと発音まで確認済みです。残っているのは、Logic Pro と Cubase の残りの項目（`docs/TEST_PLAN.md`）、識別子とライセンスの確定、署名・公証です（`docs/RELEASE_CHECKLIST.md`）。
+**現在の状態: 全フェーズの実装と自動テストまで完了。配布の準備中です。** 16 音ポリフォニー、OSC A/B とユニゾン、3 キャラクターのフィルター、Transient、ピッチベンド / ビブラート、4 マクロ（MIDI Learn）、LFO、Mono / Legato とグライド、Sub / Noise、FX 7 種、Trance Gate（ステレオ対応）/ Arpeggiator、Simple / Advanced の UI、プリセットブラウザー、Factory 128 音色が動きます。Cubase（VST3）では、発音・プロジェクトの保存と復元・テンポ同期・オートメーション・書き出しを確認済みです。Logic Pro（AU）では、読み込みと発音まで確認済みです。配布用のインストーラー（Universal の `.pkg`）を作るところまでできています。残っているのは、インストーラーへの署名と公証、リリースの公開です（`docs/RELEASE_CHECKLIST.md`）。
 
 ## 必要な環境
 
 | | 検証済み |
 |---|---|
-| macOS | 26.7.3（Apple Silicon）。ビルド対象は macOS 13.0 以降 / arm64 |
+| macOS | 26.7.3（Apple Silicon）。ビルド対象は macOS 12.0 以降。開発用のビルドは arm64、配布用（`scripts/package.sh`）は Universal |
 | Xcode | 27.2（Command Line Tools を含む） |
 | CMake | 4.4.5（3.22 以上が必要） |
 | JUCE | 9.0.6。初回の CMake 構成時に `external/_deps/` へ自動取得（ネットワーク接続が必要） |
@@ -47,7 +47,7 @@ scripts/test.sh Debug       # JUCE UnitTest ランナーを CTest 経由で実�
 scripts/validate.sh Release # auval（pluginval があれば VST3 / AU も検証）
 scripts/bench.sh            # DSP の CPU 計測（Release）
 scripts/render_presets.sh   # Factory 128 音色を build/renders/*.wav に書き出す（試聴用）
-scripts/package.sh          # インストーラー（署名なしの .pkg）を build/dist/ に作る
+scripts/package.sh          # インストーラー（Universal の .pkg）を build/dist/package/ に作る。署名と公証は docs/RELEASE_CHECKLIST.md
 ```
 
 ## 動かしてみる
@@ -68,8 +68,6 @@ scripts/package.sh          # インストーラー（署名なしの .pkg）を
   `scripts/make_icons.sh` で `icon-1024.png` と `POLYBRISK.icns` を再生成します。
 - `site/index.html` — 製品紹介ページ（依存なしの静的 HTML）。`open site/index.html` で確認できます。`main` に push すると、GitHub Actions（`.github/workflows/pages.yml`）が <https://cheebow.github.io/POLYBRISK/> に公開します。
 
-## ライセンスに関する注意
+## ライセンス
 
-**このリポジトリのライセンスは、まだ決めていません。** `LICENSE` ファイルを置くまで、ソースコード・音色・画像・音源の再利用や再配布の許諾はありません（閲覧のための公開です）。
-
-JUCE 9 は AGPLv3 と商用ライセンス（JUCE 9 EULA）のデュアルライセンスです。ビルドしたプラグインを配布する前に、どちらで配布するかを決める必要があります（`docs/DECISIONS.md` D-002）。JUCE 本体はこのリポジトリに含めず、ビルド時に取得します。プラグインの識別子（Bundle ID、AU/VST3 コード）も現在は仮の値です（D-005）。
+POLYBRISK は [GNU Affero General Public License v3.0](LICENSE) で公開しています。使っているソフトウェアは [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) にまとめてあります。JUCE 本体はこのリポジトリに含めず、ビルド時に取得します。

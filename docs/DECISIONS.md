@@ -6,10 +6,10 @@ SPEC の `[暫定]` / `[要決定]` を採用・変更したとき、および�
 | ID | 日付 | 判断 | 状態 |
 |---|---|---|---|
 | D-001 | 2026-11-21 | JUCE は 9.0.6（コミット `654bdbc7`）に固定（8.0.17 から変更） | 確定 |
-| D-002 | 2026-11-21 | JUCE ライセンスの扱い | 要決定 |
-| D-003 | 2026-11-21 | C++20、最低 macOS 13.0 | 暫定 |
-| D-004 | 2026-11-21 | arm64 のみビルド（Universal は未対応） | 暫定 |
-| D-005 | 2026-11-21 | Bundle ID・AU/VST3 コードは仮値 | 要決定 |
+| D-002 | 2026-11-21 | JUCE ライセンスの扱い → AGPL-3.0 で配布（D-077） | 決定 |
+| D-003 | 2026-11-21 | C++20、最低 macOS 13.0 → 12.0（D-077） | 決定 |
+| D-004 | 2026-11-21 | arm64 のみビルド → 配布用は Universal（D-077） | 決定 |
+| D-005 | 2026-11-21 | Bundle ID・AU/VST3 コードは仮値 → 確定（D-077） | 決定 |
 | D-006 | 2026-11-21 | JUCE は FetchContent（URL + コミットハッシュ）で取得 | 確定 |
 | D-007 | 2026-11-21 | CMake ターゲット構成とレイヤー分離 | 確定 |
 | D-008 | 2026-11-21 | Wave 選択肢は最初から最終順序で定義（Phase 1 で全波形を実装済み） | 確定 |
@@ -378,7 +378,7 @@ SPEC §6.1 の方針どおり、同じ TPT / SVF コア（Simper 形式、2 段�
 - **署名なし**のインストーラー `build/dist/POLYBRISK-0.1.0-unsigned.pkg`（約 10 MB）を作成し、AU / VST3 / Standalone が正しい場所に入る構成であることを確認した。インストールの実行はしていない。
 - pluginval を strictness 10 で実行し、VST3 / AU とも合格（AU の警告 `Current program is -1` は従来どおり）。auval 合格。
 - **行っていないこと**:
-  - コード署名と公証。署名は開発者本人の ID を使う操作で、公証は Apple へのアップロードを伴うため、明示の指示なしには実行していない。pkg の署名には Developer ID Installer 証明書の発行が必要。
+  - コード署名と公証。署名は開発者本人の ID を使う操作で、公証は Apple へのアップロードを伴うため、明示の指示なしには実行していない。（当時は「pkg の署名に使う Developer ID Installer 証明書がない」とも書いていたが、誤りだった。D-077）
   - 識別子の確定。Bundle ID と AU の製造者コードは仮値のまま（D-005）。
   - JUCE のライセンスの決定（D-002）。
   - 複数ホストでの検証（Cubase / Logic Pro でのインストール → 録音 → 書き出し → 復元）。
@@ -1067,4 +1067,28 @@ Pad / Strings は既存の音色を移しただけだったので、新しい音
 - **変わらないこと**: 選択欄のメニューを開いている間の矢印キーと Return（メニューは別のウインドウで、この仕組みの対象外）。Tab キーは JUCE がフォーカスの移動に使うので、ホストへは渡らない（以前から）。
 - **テスト**（`tests/ui/KeyboardFocusTests.cpp`。画面まわりで初めての自動テスト）: VST3 / AU / Standalone のそれぞれで、Simple・Advanced の全タブ・ブラウザーの全部品について、「入力欄と受け皿以外は受け皿へ移す」「入力欄は移さない」「入力欄は Esc / Return で手放す配線がある」ことを確かめる。
 - **自動テストで確かめられないこと**: 実際のウインドウでフォーカスが移ること（Desktop からの通知は、画面のないテストでは起きない）。Standalone での確認と、DAW でのキー操作の確認が要る。
+
+## D-077 配布の方針: AGPL-3.0、識別子の確定、Universal、インストーラー（2026-11-23、ユーザーの指示）
+
+- **指示**: 「<https://github.com/cheebow/FXtend> のように、インストーラ形式で配布できるようにしたい」。FXtend（ユーザーの別のプラグイン）の配布の仕組みを確認し、同じ方針にそろえる案を示して、承認された。
+- **決定**（D-002〜D-005 の「要決定」「暫定」は、これで決着）:
+
+| 項目 | それまで | 決定 |
+|---|---|---|
+| ライセンス | 未定（D-002） | **GNU AGPL v3.0**。`LICENSE` と `THIRD_PARTY_NOTICES.md` を置く。JUCE 9 を AGPLv3 で使う条件（ソースの公開）は、リポジトリの公開（D-075）で満たしている |
+| Bundle ID | `com.polybrisk.polybrisk`（仮） | `info.cheebow.polybrisk` |
+| AU のメーカーコード | `Pbrk`（仮） | `Chbw`（CHEEBOW のプラグインで共通。FXtend と同じ） |
+| AU のプラグインコード | `Pbk1`（仮） | `Pbrk` |
+| 最低 macOS | 13.0（D-003） | **12.0** |
+| CPU | arm64 のみ（D-004） | **配布用は Universal（arm64 + x86_64）**。開発用のビルドは arm64 のまま（速いため） |
+| 配布の形 | 署名なしの pkg を作るスクリプトまで | FXtend と同じ: VST3 / Audio Unit / Standalone を選んで入れられる `.pkg`。Developer ID で署名し、Apple の公証を受け、GitHub Releases に置く |
+
+- **識別子は、これ以降変えない。** 配布後に変えると、利用者の DAW のプロジェクトから POLYBRISK が見つからなくなる。変更の影響を受けるのは、配布前に保存した開発者自身のテスト用プロジェクト（Cubase、Logic）だけ。
+- **実装**:
+  - `scripts/package.sh` を FXtend の `scripts/package-macos.sh` と同じ構成に作り直した。Universal でビルドし、3 つの部品ごとのパッケージと、ライセンスを表示するインストーラーを作る。環境変数は FXtend と同じ名前（`SIGN_APP`、`SIGN_PKG`、`NOTARY_PROFILE`）。3 つとも省けば、署名なしのインストーラーができる。
+  - Standalone アプリは音声入力を使わないので、署名に entitlements は付けない（FXtend は音声入力を開くので付けている）。
+  - フォントは同梱していない（画面とロゴは、システムのフォントを使う）。
+- **確かめたこと**: 署名なしでインストーラーを作り、3 つの部品が Universal（x86_64 + arm64）、最低 macOS 12.0、識別子が上の表のとおり、入れる場所が `/Library/Audio/Plug-Ins/VST3`・`/Library/Audio/Plug-Ins/Components`・`/Applications` であること、ライセンスの文面が入っていることを確認した。新しい識別子と最低 macOS 12.0 で、Debug / Release のテストが 100 % 合格、`auval -v aumu Pbrk Chbw` と pluginval（strictness 10、VST3 と AU）が合格。**Intel 向けのコード**は、テスト一式を Universal でビルドし、Rosetta 上で x86_64 として実行して、全件合格した（260,654 件の検査、失敗 0）。Intel Mac の実機と、Intel 向けのプラグインを DAW に読み込む確認はしていない。
+- **訂正**: 2026-11-21 の記録に「Developer ID Installer 証明書が見当たらない」と書いたのは誤りだった。署名用の証明書だけを列挙する方法で調べたため、インストーラー用の証明書が表示されなかった。実際には、この開発機に Developer ID Application と Developer ID Installer の両方がある（FXtend のインストーラーは、それで署名・公証されている）。
+- **まだ行っていないこと**: 署名と公証（ユーザーの Developer ID を使い、Apple へ送信する操作なので、実行の前にユーザーに確認する）、インストールの実行、GitHub Releases への掲載、製品ページへのダウンロードの導線、最初に配布するバージョン番号の決定（いまは 0.1.0）。Intel Mac の実機での確認。
 

@@ -11,10 +11,10 @@ CONFIG="${1:-Release}"
 ARTEFACTS="$ROOT/build/$CONFIG/PolyBrisk_artefacts/$CONFIG"
 STATUS=0
 
-# 仮の識別子 (docs/DECISIONS.md D-005)。CMakeLists.txt と一致させること。
+# 識別子 (docs/DECISIONS.md D-077)。CMakeLists.txt と一致させること。
 AU_TYPE=aumu
-AU_SUBTYPE=Pbk1
-AU_MANUFACTURER=Pbrk
+AU_SUBTYPE=Pbrk
+AU_MANUFACTURER=Chbw
 
 echo "==> auval -v $AU_TYPE $AU_SUBTYPE $AU_MANUFACTURER"
 if auval -v "$AU_TYPE" "$AU_SUBTYPE" "$AU_MANUFACTURER"; then
