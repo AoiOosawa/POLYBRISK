@@ -33,7 +33,7 @@ SuperSAW / Synth Brass / Stab に特化した macOS 用ポリフォニック・�
 - 開発ルール: [`CLAUDE.md`](CLAUDE.md)
 - 設計: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) / パラメーター: [`docs/PARAMETER_IDS.md`](docs/PARAMETER_IDS.md) / 判断ログ: [`docs/DECISIONS.md`](docs/DECISIONS.md) / テスト: [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md) / 配布の手順: [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md)
 
-**現在の状態: 0.1.0 を公開しました。** Cubase（VST3）では、発音・プロジェクトの保存と復元・テンポ同期・オートメーション・書き出しを確認済みです。Logic Pro（Audio Unit）では、読み込みと発音まで確認済みです。Intel Mac の実機と、残りの DAW の確認項目（`docs/TEST_PLAN.md`）は未確認です。
+**現在の状態: 0.1.0 を公開しました。** Cubase（VST3）では、発音・プロジェクトの保存と復元・テンポ同期・オートメーション・書き出しを確認済みです。Logic Pro（Audio Unit）では、読み込みと発音まで確認済みです。公開した 0.1.0 は、インストールして DAW で読み込み、音が出ることを確認済みです。Intel Mac の実機と、残りの DAW の確認項目（`docs/TEST_PLAN.md`）は未確認です。
 
 ## 必要な環境
 

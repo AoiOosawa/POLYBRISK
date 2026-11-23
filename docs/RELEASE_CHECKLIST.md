@@ -39,7 +39,7 @@
 | ライセンス表記 | ✅ | `LICENSE`（AGPL-3.0）と `THIRD_PARTY_NOTICES.md`。インストーラーのライセンスの画面に両方を表示する |
 | ユーザーガイド | ✅ | `docs/USER_GUIDE.md` |
 | 紹介ページ | ✅ | `site/index.html`。GitHub Pages で公開済み（<https://cheebow.github.io/POLYBRISK/>）。ダウンロードのボタンは、GitHub の最新のリリースへ案内する |
-| リリース | ✅ | **0.1.0 を 2026-11-23 に公開**: <https://github.com/cheebow/POLYBRISK/releases/tag/v0.1.0>（`POLYBRISK-0.1.0-macOS.pkg`）。タグ `v0.1.0` は、インストーラーをビルドしたコミットを指す |
+| リリース | ✅ | **0.1.0 を 2026-11-23 に公開**: <https://github.com/cheebow/POLYBRISK/releases/tag/v0.1.0>（`POLYBRISK-0.1.0-macOS.pkg`）。タグ `v0.1.0` は、インストーラーをビルドしたコミットを指す。公開後、インストールした製品版を DAW で読み込み、発音とキー操作（クリック後のスペースキー）をユーザーが確認済み |
 
 ## 配布用パッケージを作る手順
 
