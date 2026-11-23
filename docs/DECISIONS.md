@@ -1115,3 +1115,18 @@ Pad / Strings は既存の音色を移しただけだったので、新しい音
 - **確かめたこと**: 開発用のビルドで Debug / Release のテスト 100 % 合格、`auval -v aumu Pbrd Chbw` と pluginval（strictness 10）合格。配布用のビルドは、名前が POLYBRISK、識別子が `info.cheebow.polybrisk` / `Pbrk` / `Chbw`、Universal のままで、`DEV` の印が入っていないこと。
 - **未確認**: 開発用の画面での `DEV` の印の見た目（画面画像の書き出しは、プラグインとしてのビルドではないので印が出ない）。
 
+## D-079 最初の配布は 0.1.0。署名と公証を実行（2026-11-23、ユーザーの指示）
+
+- **バージョン**: 最初に配布するバージョンは **0.1.0**（ユーザーが決定。FXtend が 0.1.x で公開しているのと同じ考え方）。
+- **署名と公証**: ユーザーの「進めて」で実行した。公証用のプロファイルは、FXtend のときに作ったもの（アプリごとではなく、Apple ID と開発チームの認証情報なので、そのまま使える）。
+- **結果**（`build/dist/package/POLYBRISK-0.1.0-macOS.pkg`、約 20 MB）:
+  - インストーラー: Developer ID Installer で署名、Apple の公証に合格、チケットを添付。`spctl` の判定は「Notarized Developer ID」。
+  - 中身の VST3 / Audio Unit / Standalone アプリ: Developer ID Application で、Hardened Runtime 付きで署名。Universal（x86_64 + arm64）。アプリの `spctl` の判定も「Notarized Developer ID」。
+  - 製品版の名前と識別子で、`DEV` の印は入っていない。
+  - SHA-256: `c376f5a4a637672883fdd257fa4931963118972ee77e967d2a0c99318ce1b613`
+- 署名に使った名義やチームの ID は、リポジトリのファイルには書いていない。
+- **インストールの確認**（同日、ユーザーが開発機でインストーラーを実行）: 3 つが `/Library/Audio/Plug-Ins/VST3`・`/Library/Audio/Plug-Ins/Components`・`/Applications` に入り、署名は有効、アプリは Gatekeeper が「Notarized Developer ID」として受け入れた。インストールされた製品版で、`auval -v aumu Pbrk Chbw` と pluginval（strictness 10、VST3 / AU）が合格。開発用の「POLYBRISK Dev」（`~/Library`）とは別のプラグインとして並び、重複しない（D-078）。
+- **公開**（同日、ユーザーの「公開して」で実行）: GitHub Releases に `v0.1.0`（タイトル「POLYBRISK 0.1.0」）を作り、`POLYBRISK-0.1.0-macOS.pkg` を置いた。<https://github.com/cheebow/POLYBRISK/releases/tag/v0.1.0>。タグは、インストーラーをビルドしたコミット（`922b87c`）を指す（配ったものと同じソース）。説明文は FXtend のリリースと同じ構成（入っているもの / インストール / 知っておいてほしいこと）。公開されたファイルをダウンロードし直して、SHA-256 が手元のものと一致し、Gatekeeper が受け入れることを確かめた。
+- あわせて、README の先頭を利用者向け（インストールとアンインストール）にし、製品ページにダウンロードのボタンと入手方法を足した。
+- **まだ行っていないこと**: インストールした製品版を DAW で使う確認、開発環境のない別の Mac でのインストール、Intel Mac の実機での確認。
+

@@ -31,14 +31,15 @@
 
 | 項目 | 状態 | 内容 |
 |---|---|---|
-| インストーラーの作成 | ✅ | `scripts/package.sh` が Universal の `build/dist/package/POLYBRISK-<version>-macOS.pkg` を作る。VST3 / Audio Unit / Standalone を選んで入れられる。署名なしで作成し、中身（3 つの部品、入れる場所、識別子、対応 CPU と OS）を確認済み。インストールの実行は未確認 |
-| コード署名（Developer ID Application） | ⬜ | `SIGN_APP` を設定して `scripts/package.sh`。ユーザーの指示で行う |
-| インストーラーの署名（Developer ID Installer） | ⬜ | `SIGN_PKG` を設定して `scripts/package.sh`。ユーザーの指示で行う |
-| 公証（Notarization）と staple | ⬜ | `NOTARY_PROFILE`（`xcrun notarytool store-credentials` で作ったプロファイル名）を設定。Apple へのアップロードを伴うので、ユーザーの指示で行う |
-| バージョン番号 | 🟡 | `CMakeLists.txt` の `project(... VERSION 0.1.0)` |
+| インストーラーの作成 | ✅ | `scripts/package.sh` が Universal の `build/dist/package/POLYBRISK-<version>-macOS.pkg` を作る。VST3 / Audio Unit / Standalone を選んで入れられる。**0.1.0 を開発機にインストールして確認済み**（2026-11-23）: 3 つが `/Library/Audio/Plug-Ins/VST3`・`/Library/Audio/Plug-Ins/Components`・`/Applications` に入り、署名が有効。入った製品版で `auval -v aumu Pbrk Chbw` と pluginval（strictness 10、VST3 / AU）が合格。開発用の「POLYBRISK Dev」とは重複しない |
+| コード署名（Developer ID Application） | ✅ | 2026-11-23、0.1.0。VST3 / Audio Unit / Standalone アプリに、Hardened Runtime 付きで署名（`SIGN_APP`） |
+| インストーラーの署名（Developer ID Installer） | ✅ | 2026-11-23、0.1.0（`SIGN_PKG`） |
+| 公証（Notarization）と staple | ✅ | 2026-11-23、0.1.0。Apple の公証に合格し、チケットを添付した。`spctl` の判定は「Notarized Developer ID」（インストーラーと、中のアプリの両方） |
+| バージョン番号 | ✅ | 最初の配布は **0.1.0**（`CMakeLists.txt` の `project(... VERSION 0.1.0)`）。ユーザーが決定 |
 | ライセンス表記 | ✅ | `LICENSE`（AGPL-3.0）と `THIRD_PARTY_NOTICES.md`。インストーラーのライセンスの画面に両方を表示する |
 | ユーザーガイド | ✅ | `docs/USER_GUIDE.md` |
-| 紹介ページ | 🟡 | `site/index.html`（実画面とデモ音源を掲載。GitHub Pages で公開済み。ダウンロードの導線は未設置） |
+| 紹介ページ | ✅ | `site/index.html`。GitHub Pages で公開済み（<https://cheebow.github.io/POLYBRISK/>）。ダウンロードのボタンは、GitHub の最新のリリースへ案内する |
+| リリース | ✅ | **0.1.0 を 2026-11-23 に公開**: <https://github.com/cheebow/POLYBRISK/releases/tag/v0.1.0>（`POLYBRISK-0.1.0-macOS.pkg`）。タグ `v0.1.0` は、インストーラーをビルドしたコミットを指す |
 
 ## 配布用パッケージを作る手順
 

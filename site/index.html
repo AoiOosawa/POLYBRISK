@@ -75,7 +75,14 @@
   }
   .tagline { margin: 22px auto 0; max-width: 820px; font-size: clamp(17px, 2.4vw, 22px); font-weight: 600; }
   .lead { margin: 14px auto 0; max-width: 680px; color: var(--muted); font-size: 15.5px; text-wrap: balance; }
-  .formats { margin-top: 30px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .download { margin-top: 34px; }
+  .button {
+    display: inline-block; padding: 15px 34px; border-radius: 999px; background: var(--grad); color: #14151f;
+    font-weight: 800; font-size: 17px; text-decoration: none; letter-spacing: 0.02em;
+  }
+  .button:hover { filter: brightness(1.08); }
+  .download-note { margin: 12px 0 0; color: var(--muted); font-size: 13.5px; }
+  .formats { margin-top: 26px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .chip {
     padding: 7px 16px; border-radius: 999px; background: var(--bg-card); border: 1px solid var(--line);
     font-size: 13.5px; font-weight: 600; letter-spacing: 0.04em;
@@ -217,6 +224,10 @@
       <h1>POLYBRISK</h1>
       <p class="tagline">選んで弾けば、そのまま使える。<br>SuperSAW・Synth Brass・Stab のためのポリフォニック・シンセ。</p>
       <p class="lead">J-POP、アイドルポップス、シンセポップ、ダンスポップ。明るくて輪郭のはっきりした音が欲しいときのための、macOS 用ソフトウェア・シンセサイザーです。</p>
+      <div class="download">
+        <a class="button" href="https://github.com/cheebow/POLYBRISK/releases/latest">ダウンロード（無料）</a>
+        <p class="download-note">macOS 用のインストーラーです。Apple の公証済み。</p>
+      </div>
       <div class="formats">
         <span class="chip">AU</span>
         <span class="chip">VST3</span>
@@ -416,6 +427,7 @@
         <dt>種類</dt><dd>音源（MIDI 入力、ステレオ出力）</dd>
         <dt>サンプルレート</dt><dd>44.1 / 48 / 88.2 / 96 kHz</dd>
         <dt>対応しないもの</dt><dd>Windows、AAX、CLAP、AUv3、MPE</dd>
+        <dt>入手方法</dt><dd><a href="https://github.com/cheebow/POLYBRISK/releases/latest">GitHub のリリースページ</a>からインストーラー（.pkg）をダウンロードできます。無料です。ソースコードは <a href="https://github.com/cheebow/POLYBRISK">GitHub</a> で公開しています（AGPL-3.0）</dd>
       </dl>
     </div>
   </section>

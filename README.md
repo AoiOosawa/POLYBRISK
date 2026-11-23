@@ -2,13 +2,38 @@
 
 SuperSAW / Synth Brass / Stab に特化した macOS 用ポリフォニック・シンセサイザー（AU / VST3 / Standalone）。
 
-- 製品ページ: <https://cheebow.github.io/POLYBRISK/>
+音色を選んで、4 つのノブで曲に合わせれば、すぐに使えます。128 のプリセットが入っています。
+
+音を聞きたい方、画面を見たい方は [紹介ページ](https://cheebow.github.io/POLYBRISK/) をどうぞ。使い方は [ユーザーガイド](docs/USER_GUIDE.md) にあります。
+
+## インストール
+
+[最新のリリース](https://github.com/cheebow/POLYBRISK/releases/latest) からインストーラ（`.pkg`）をダウンロードして開き、画面の案内に沿って進めてください。VST3、Audio Unit、スタンドアロンアプリの中から、入れたいものを選べます。
+
+- macOS 12 以降
+- Apple Silicon。Intel Mac でも動くように作っていますが、実機ではまだ試せていません。
+- Apple の公証済みです
+
+### アンインストール
+
+次のものを削除します。自分で保存したプリセットと設定も消すなら、最後の 1 つも削除してください。
+
+```text
+/Library/Audio/Plug-Ins/VST3/POLYBRISK.vst3
+/Library/Audio/Plug-Ins/Components/POLYBRISK.component
+/Applications/POLYBRISK.app
+~/Library/Application Support/POLYBRISK
+```
+
+## 開発者向け
+
+ここから下は、ソースからビルドする人向けの説明です。
 
 - 製品要件の正本: [`SPEC.md`](SPEC.md)（追加仕様: [`docs/ADDON_TRANCE_GATE_ARPEGGIATOR.md`](docs/ADDON_TRANCE_GATE_ARPEGGIATOR.md)）
 - 開発ルール: [`CLAUDE.md`](CLAUDE.md)
-- 設計: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) / パラメーター: [`docs/PARAMETER_IDS.md`](docs/PARAMETER_IDS.md) / 判断ログ: [`docs/DECISIONS.md`](docs/DECISIONS.md) / テスト: [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md)
+- 設計: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) / パラメーター: [`docs/PARAMETER_IDS.md`](docs/PARAMETER_IDS.md) / 判断ログ: [`docs/DECISIONS.md`](docs/DECISIONS.md) / テスト: [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md) / 配布の手順: [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md)
 
-**現在の状態: 全フェーズの実装と自動テストまで完了。配布の準備中です。** 16 音ポリフォニー、OSC A/B とユニゾン、3 キャラクターのフィルター、Transient、ピッチベンド / ビブラート、4 マクロ（MIDI Learn）、LFO、Mono / Legato とグライド、Sub / Noise、FX 7 種、Trance Gate（ステレオ対応）/ Arpeggiator、Simple / Advanced の UI、プリセットブラウザー、Factory 128 音色が動きます。Cubase（VST3）では、発音・プロジェクトの保存と復元・テンポ同期・オートメーション・書き出しを確認済みです。Logic Pro（AU）では、読み込みと発音まで確認済みです。配布用のインストーラー（Universal の `.pkg`）を作るところまでできています。残っているのは、インストーラーへの署名と公証、リリースの公開です（`docs/RELEASE_CHECKLIST.md`）。
+**現在の状態: 0.1.0 を公開しました。** Cubase（VST3）では、発音・プロジェクトの保存と復元・テンポ同期・オートメーション・書き出しを確認済みです。Logic Pro（Audio Unit）では、読み込みと発音まで確認済みです。Intel Mac の実機と、残りの DAW の確認項目（`docs/TEST_PLAN.md`）は未確認です。
 
 ## 必要な環境
 
