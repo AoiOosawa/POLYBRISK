@@ -1137,5 +1137,6 @@ Pad / Strings は既存の音色を移しただけだったので、新しい音
 - **経緯**: ユーザーの質問「ogp ってあるんだっけ？」。製品ページには OGP のタグがなかった（FXtend のページにはある）。
 - **決定**: FXtend のページと同じ項目を入れる: `og:title`、`og:description`、`og:image`（1200×630）、`og:url`、`og:type`、`og:site_name`、`og:locale`、X（Twitter）用の `twitter:card`（`summary_large_image`）ほか、`canonical`。あわせて、検索結果に出る説明文（`description`）を、いまの製品ページの言い回しに合わせて直した。
 - **画像**: `site/assets/og.png`。ロゴとワードマークの下に、Simple の画面を置いた（FXtend の画像と同じ構成）。`scripts/make_og_image.sh` が、`tools/og_image.html` を Google Chrome のヘッドレスモードで PNG にする。画面の見た目を変えたら、画面画像を更新してから作り直す。
+- **追記（同日、ユーザーの希望）**: 画像に、キャッチコピー「選んで弾けば、そのまま使える。」と「SuperSAW・Synth Brass・Stab のためのポリフォニック・シンセ。」の 2 行を入れた（ロゴの下。そのぶんロゴを少し小さくし、画面の画像を下げた）。説明文（`og:description`）も、同じ文で始まるようにした。
 - **未確認**: 実際の SNS やチャットでの表示（公開後に、各サービスがページを読みに来て初めて確かめられる）。
 

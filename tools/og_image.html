@@ -9,15 +9,21 @@
       #0d0e17;
     font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   }
-  .brand { position: absolute; top: 34px; left: 0; width: 1200px; display: flex; align-items: center; justify-content: center; gap: 22px; }
-  .brand svg { width: 150px; height: auto; }
+  .brand { position: absolute; top: 22px; left: 0; width: 1200px; display: flex; align-items: center; justify-content: center; gap: 20px; }
+  .brand svg { width: 124px; height: auto; }
   .brand span {
-    font-size: 78px; font-weight: 800; font-style: italic; letter-spacing: 0.05em; line-height: 1;
+    font-size: 66px; font-weight: 800; font-style: italic; letter-spacing: 0.05em; line-height: 1;
     background: linear-gradient(90deg, #ffd23c, #ff6a3c 55%, #ff3c8e); -webkit-background-clip: text; background-clip: text; color: transparent;
     padding-right: 10px;
   }
+  .tagline {
+    position: absolute; top: 108px; left: 0; width: 1200px; text-align: center; color: #f4f5fb;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Avenir Next", sans-serif;
+  }
+  .tagline b { display: block; font-size: 34px; font-weight: 700; letter-spacing: 0.04em; line-height: 1.3; }
+  .tagline span { display: block; margin-top: 6px; font-size: 22px; font-weight: 600; color: #c9ccdd; letter-spacing: 0.02em; }
   .shot {
-    position: absolute; top: 170px; left: 150px; width: 900px; height: 520px; overflow: hidden;
+    position: absolute; top: 222px; left: 150px; width: 900px; height: 520px; overflow: hidden;
     border-radius: 18px 18px 0 0; border: 1px solid rgba(255, 255, 255, 0.14); border-bottom: 0;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
   }
@@ -39,5 +45,6 @@
     </defs>
   </svg>
   <div class="brand"><svg viewBox="0 0 680 420"><use href="#pb-mark"/></svg><span>POLYBRISK</span></div>
+  <div class="tagline"><b>選んで弾けば、そのまま使える。</b><span>SuperSAW・Synth Brass・Stab のためのポリフォニック・シンセ。</span></div>
   <div class="shot"><img src="../site/assets/screens/polybrisk_simple.png" alt=""></div>
 </body></html>
