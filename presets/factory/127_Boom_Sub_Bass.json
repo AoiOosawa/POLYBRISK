@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "3d3c876c-55c9-517c-b598-dbc0ef5a7a39",
+  "name": "Boom Sub Bass",
+  "category": "Bass",
+  "tags": [
+    "Dark",
+    "Big",
+    "Punchy",
+    "Mono",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "A distorted sine that falls two octaves into pitch with a hard thump and then dies away over a second and a half. The tuned kick-bass of trap and hip-hop: every note hits again, and overlapping notes slide.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Sine",
+    "osc.a.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 1000,
+    "filter.keyTrack": 40,
+    "amp.attack": 0.5,
+    "amp.decay": 1500,
+    "amp.sustain": 0,
+    "amp.release": 120,
+    "transient.enabled": true,
+    "transient.mode": "Both",
+    "transient.amount": 100,
+    "transient.duration": 60,
+    "transient.noiseColor": 20,
+    "transient.pitchSnap": 24,
+    "voice.mode": "Mono",
+    "voice.glide": 60,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Soft Clip",
+    "fx.drive.drive": 50,
+    "fx.drive.tone": 45,
+    "fx.drive.mix": 85,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 40,
+    "fx.imager.monoBass": true,
+    "preset.level": 4.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Thump",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.5,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        },
+        {
+          "target": "transient.duration",
+          "deltaMin": -0.15,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Dirt",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Glide",
+      "mappings": [
+        {
+          "target": "voice.glide",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

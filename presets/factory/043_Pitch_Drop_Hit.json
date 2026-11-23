@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "d68ece20-b16c-51d0-9586-73b4e6e27a35",
+  "name": "Pitch Drop Hit",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Bright",
+    "Aggressive",
+    "Big",
+    "FX"
+  ],
+  "author": "POLYBRISK",
+  "description": "Every note starts two octaves high and falls into place. A zap for fills and transitions.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 24,
+    "osc.a.spread": 80,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP12",
+    "filter.cutoff": 4000,
+    "filter.resonance": 15,
+    "filter.envAmount": 30,
+    "filter.keyTrack": 30,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 300,
+    "filterEnv.sustain": 10,
+    "filterEnv.release": 200,
+    "amp.attack": 0.5,
+    "amp.decay": 500,
+    "amp.sustain": 0,
+    "amp.release": 200,
+    "transient.enabled": true,
+    "transient.mode": "Pitch Snap",
+    "transient.amount": 100,
+    "transient.duration": 80,
+    "transient.pitchSnap": 24,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 35,
+    "fx.delay.mix": 14,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 2.4,
+    "fx.reverb.mix": 20,
+    "preset.level": 3.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Drop",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        },
+        {
+          "target": "transient.duration",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

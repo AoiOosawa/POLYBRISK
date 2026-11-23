@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "75b0bd4d-ba09-539d-98e0-8c487c06fc2d",
+  "name": "Three Octave Keys",
+  "category": "Octave / Layered",
+  "tags": [
+    "Bright",
+    "Punchy",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "A decaying key sound spread over three octaves: square sub, pulse and a thin pulse on top. Riffs that need to be heard on small speakers.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 40,
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 8,
+    "osc.a.spread": 40,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 15,
+    "osc.b.octave": 1,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1800,
+    "filter.resonance": 12,
+    "filter.envAmount": 42,
+    "filter.keyTrack": 50,
+    "filter.velocity": 40,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 320,
+    "filterEnv.sustain": 25,
+    "filterEnv.release": 200,
+    "amp.attack": 1,
+    "amp.decay": 700,
+    "amp.sustain": 40,
+    "amp.release": 200,
+    "sub.level": 50,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Square",
+    "transient.enabled": true,
+    "transient.mode": "Noise Burst",
+    "transient.amount": 18,
+    "transient.duration": 6,
+    "transient.noiseColor": 65,
+    "fx.eq.enabled": true,
+    "fx.eq.midFreq": 2000,
+    "fx.eq.midGain": 2,
+    "fx.eq.highGain": 1.5,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8",
+    "fx.delay.feedback": 22,
+    "fx.delay.mix": 8,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.2,
+    "fx.reverb.mix": 12,
+    "preset.level": -4.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Top",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.5,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Sub",
+      "mappings": [
+        {
+          "target": "sub.level",
+          "deltaMin": -0.5,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Decay",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.sustain",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

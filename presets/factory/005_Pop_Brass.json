@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "840b7af3-c47a-5ea3-8012-7830d0b0aac4",
+  "name": "Pop Brass",
+  "category": "Synth Brass",
+  "tags": [
+    "Warm",
+    "Punchy",
+    "Classic"
+  ],
+  "author": "POLYBRISK",
+  "description": "The standard synth brass: two saws through the analog filter, velocity opens it up.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 16,
+    "osc.a.spread": 40,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.fine": 7,
+    "osc.b.level": 70,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 480,
+    "filter.resonance": 12,
+    "filter.drive": 20,
+    "filter.envAmount": 46,
+    "filter.keyTrack": 50,
+    "filter.velocity": 45,
+    "filterEnv.attack": 40,
+    "filterEnv.decay": 360,
+    "filterEnv.sustain": 45,
+    "filterEnv.release": 240,
+    "amp.attack": 10,
+    "amp.decay": 400,
+    "amp.sustain": 90,
+    "amp.release": 200,
+    "performance.vibratoDepth": 25,
+    "performance.vibratoDelay": 350,
+    "fx.eq.enabled": true,
+    "fx.eq.midFreq": 2500,
+    "fx.eq.midGain": 2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 12,
+    "preset.level": -4.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.1,
+          "deltaMax": 0.1,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Attack",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.1,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Bite",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.drive",
+          "deltaMin": -0.2,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

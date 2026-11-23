@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "id": "f5bd0730-4edc-51b0-b7d3-022addc826d3",
+  "name": "Trance Pluck Saw",
+  "category": "SuperSAW",
+  "tags": [
+    "Bright",
+    "Punchy",
+    "Classic",
+    "Wide"
+  ],
+  "author": "POLYBRISK",
+  "description": "A supersaw chord that snaps bright and falls away at once, leaving reverb behind. The plucked chord of trance and dance-pop; play rhythms, not held notes.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 30,
+    "osc.a.spread": 85,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": 1,
+    "osc.b.level": 30,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 500,
+    "filter.resonance": 10,
+    "filter.envAmount": 70,
+    "filter.keyTrack": 45,
+    "filter.velocity": 30,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 260,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 220,
+    "amp.attack": 1,
+    "amp.decay": 420,
+    "amp.sustain": 0,
+    "amp.release": 240,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.highGain": 2,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 115,
+    "fx.imager.monoBass": true,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8",
+    "fx.delay.feedback": 25,
+    "fx.delay.mix": 10,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 2.0,
+    "fx.reverb.mix": 22,
+    "preset.level": 5.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "bb7da231-1011-52b0-9b4d-d543453b6290",
+  "name": "Tiny Tight Stab",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Warm",
+    "Tight",
+    "Mix Ready",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "Very short, dry stab for 16th-note comping. No reverb: add your own in the mix.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Square",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.fine": -6,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1500,
+    "filter.resonance": 10,
+    "filter.envAmount": 45,
+    "filter.keyTrack": 40,
+    "filter.velocity": 40,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 90,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 70,
+    "amp.attack": 0.5,
+    "amp.decay": 150,
+    "amp.sustain": 0,
+    "amp.release": 60,
+    "transient.enabled": true,
+    "transient.mode": "Noise Burst",
+    "transient.amount": 25,
+    "transient.duration": 6,
+    "transient.noiseColor": 60,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -4,
+    "fx.eq.midFreq": 3000,
+    "fx.eq.midGain": 1.5,
+    "preset.level": 1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Click",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.25,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Body",
+      "mappings": [
+        {
+          "target": "fx.eq.lowGain",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

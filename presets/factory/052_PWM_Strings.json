@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "id": "ec1d0f78-fdf4-5eff-8a18-120fb1e6a76a",
+  "name": "PWM Strings",
+  "category": "Pad / Strings",
+  "tags": [
+    "Warm",
+    "Hollow",
+    "Classic",
+    "Wide",
+    "Motion",
+    "Slow"
+  ],
+  "author": "POLYBRISK",
+  "description": "Two pulse waves an octave apart whose width moves slowly and deeply, with no chorus on top. Darker and slower than an ensemble: a hollow, swaying string pad.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 50,
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 6,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 30,
+    "osc.b.octave": -1,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1500,
+    "filter.resonance": 12,
+    "filter.envAmount": 20,
+    "filter.keyTrack": 45,
+    "filterEnv.attack": 600,
+    "filterEnv.decay": 2000,
+    "filterEnv.sustain": 70,
+    "filterEnv.release": 900,
+    "amp.attack": 350,
+    "amp.decay": 1200,
+    "amp.sustain": 90,
+    "amp.release": 1100,
+    "lfo.wave": "Sine",
+    "lfo.rate": 0.35,
+    "lfo.pulseWidth": 85,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.8,
+    "fx.reverb.mix": 28,
+    "preset.level": -6.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Attack",
+      "mappings": [
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "PWM",
+      "mappings": [
+        {
+          "target": "lfo.pulseWidth",
+          "deltaMin": -0.5,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "lfo.rate",
+          "deltaMin": -0.03,
+          "deltaMax": 0.1,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

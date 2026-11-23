@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "5b246a2c-7e40-5b94-9063-566ab28d079a",
+  "name": "Build Gate Saw",
+  "category": "Trance Gate",
+  "tags": [
+    "Bright",
+    "Wide",
+    "Gate"
+  ],
+  "author": "POLYBRISK",
+  "description": "The gate pattern gets denser through the bar while the filter opens. One-bar build-ups.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 40,
+    "osc.a.spread": 90,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "SuperSAW",
+    "osc.b.octave": 1,
+    "osc.b.unisonVoices": 5,
+    "osc.b.detune": 34,
+    "osc.b.spread": 100,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1500,
+    "filter.envAmount": 40,
+    "filter.keyTrack": 30,
+    "filterEnv.attack": 1800,
+    "filterEnv.decay": 2000,
+    "filterEnv.sustain": 100,
+    "filterEnv.release": 400,
+    "amp.attack": 2,
+    "amp.decay": 600,
+    "amp.sustain": 100,
+    "amp.release": 300,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 3,
+    "gate.restart": "Note On",
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.2,
+    "fx.reverb.mix": 24,
+    "preset.level": -2.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Gate Depth",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.6,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Rise",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.2,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Build Up",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+}

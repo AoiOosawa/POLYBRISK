@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "id": "43580f3a-e6c4-585d-98cc-598f9564a599",
+  "name": "Pump Saw",
+  "category": "Trance Gate",
+  "tags": [
+    "Warm",
+    "Wide",
+    "Gate"
+  ],
+  "author": "POLYBRISK",
+  "description": "Offbeat gate with a long smooth time: a side-chain style pump without a compressor.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 34,
+    "osc.a.spread": 75,
+    "osc.a.unisonMix": 60,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": -1,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 6000,
+    "filter.resonance": 8,
+    "filter.keyTrack": 30,
+    "amp.attack": 8,
+    "amp.decay": 900,
+    "amp.sustain": 100,
+    "amp.release": 350,
+    "gate.enabled": true,
+    "gate.steps": "8",
+    "gate.rate": "1/8",
+    "gate.depth": 85,
+    "gate.smooth": 25,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.6,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 22,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 110,
+    "fx.imager.monoBass": true,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 2.0,
+    "fx.reverb.mix": 20,
+    "preset.level": 1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Pump",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.6,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        },
+        {
+          "target": "gate.smooth",
+          "deltaMin": -0.5,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Offbeat",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ]
+  }
+}

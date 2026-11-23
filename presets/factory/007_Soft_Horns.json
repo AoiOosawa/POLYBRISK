@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "7f3d4fb3-c373-5751-a3df-4f6526ba97bb",
+  "name": "Soft Horns",
+  "category": "Synth Brass",
+  "tags": [
+    "Warm",
+    "Soft",
+    "Airy",
+    "Wide",
+    "Slow",
+    "Dynamic"
+  ],
+  "author": "POLYBRISK",
+  "description": "Mellow horn pad with a little breath noise. Press into the keys (aftertouch) to open it up and add vibrato.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Triangle",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 8,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.level": 30,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP12",
+    "filter.cutoff": 420,
+    "filter.envAmount": 26,
+    "filter.keyTrack": 60,
+    "filter.velocity": 30,
+    "filterEnv.attack": 140,
+    "filterEnv.decay": 700,
+    "filterEnv.sustain": 60,
+    "filterEnv.release": 400,
+    "amp.attack": 70,
+    "amp.decay": 600,
+    "amp.sustain": 90,
+    "amp.release": 420,
+    "noise.level": 12,
+    "noise.color": 40,
+    "performance.vibratoDepth": 20,
+    "performance.vibratoDelay": 600,
+    "performance.aftertouchVibrato": 25,
+    "performance.aftertouchCutoff": 30,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.5,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 18,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 2.8,
+    "fx.reverb.mix": 26,
+    "preset.level": -1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Swell",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Breath",
+      "mappings": [
+        {
+          "target": "noise.level",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "feebee1b-1a9b-5fd2-bf96-cd0b7f83a75e",
+  "name": "Digital Keys",
+  "category": "Bright Poly",
+  "tags": [
+    "Bright",
+    "Clean"
+  ],
+  "author": "POLYBRISK",
+  "description": "Square with a very narrow pulse on top. Hard, glassy digital keys for fast chord parts.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Square",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 10,
+    "osc.b.octave": 1,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 7000,
+    "filter.envAmount": 20,
+    "filter.keyTrack": 60,
+    "filter.velocity": 40,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 350,
+    "filterEnv.sustain": 30,
+    "filterEnv.release": 200,
+    "amp.attack": 1,
+    "amp.decay": 600,
+    "amp.sustain": 45,
+    "amp.release": 220,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.highGain": 2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.8,
+    "fx.reverb.mix": 12,
+    "preset.level": 0.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Thin",
+      "mappings": [
+        {
+          "target": "osc.b.pulseWidth",
+          "deltaMin": -0.08,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Decay",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

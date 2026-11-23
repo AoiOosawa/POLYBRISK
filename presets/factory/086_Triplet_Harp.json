@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "a5851bac-505c-588d-9a7e-6d168f8151b0",
+  "name": "Triplet Harp",
+  "category": "Synth Pluck",
+  "tags": [
+    "Warm",
+    "Soft",
+    "Classic",
+    "Arp"
+  ],
+  "author": "POLYBRISK",
+  "description": "A rising triplet arpeggio of soft plucks that ring into each other, like a strummed harp. For 6/8 and slow songs.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Triangle",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.level": 30,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Analog",
+    "filter.mode": "LP12",
+    "filter.cutoff": 1200,
+    "filter.envAmount": 40,
+    "filter.keyTrack": 55,
+    "filter.velocity": 45,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 250,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 400,
+    "amp.attack": 1,
+    "amp.decay": 700,
+    "amp.sustain": 0,
+    "amp.release": 600,
+    "arp.enabled": true,
+    "arp.mode": "Up",
+    "arp.rate": "1/8T",
+    "arp.octaves": 2,
+    "arp.gate": 90,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.5,
+    "fx.chorus.depth": 30,
+    "fx.chorus.mix": 18,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 2.8,
+    "fx.reverb.mix": 26,
+    "preset.level": 8.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Ring",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.release",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Arp Gate",
+      "mappings": [
+        {
+          "target": "arp.gate",
+          "deltaMin": -0.5,
+          "deltaMax": 0.1,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

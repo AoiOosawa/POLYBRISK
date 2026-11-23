@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "f2f22a15-21c2-56d5-b0b5-ee364557ba90",
+  "name": "Acid Arp Line",
+  "category": "Lead / Hook",
+  "tags": [
+    "Bright",
+    "Aggressive",
+    "Classic",
+    "Arp",
+    "Motion"
+  ],
+  "author": "POLYBRISK",
+  "description": "A falling 16th arpeggio through a squelchy resonant filter that opens and closes over four bars. Hold two or three notes.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 350,
+    "filter.resonance": 62,
+    "filter.drive": 40,
+    "filter.envAmount": 55,
+    "filter.keyTrack": 40,
+    "filter.velocity": 40,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 130,
+    "filterEnv.sustain": 10,
+    "filterEnv.release": 90,
+    "amp.attack": 0.5,
+    "amp.decay": 220,
+    "amp.sustain": 50,
+    "amp.release": 80,
+    "lfo.wave": "Triangle",
+    "lfo.sync": true,
+    "lfo.division": "4 Bars",
+    "lfo.retrigger": false,
+    "lfo.cutoff": 45,
+    "arp.enabled": true,
+    "arp.mode": "Down",
+    "arp.rate": "1/16",
+    "arp.octaves": 1,
+    "arp.gate": 50,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tube Saturation",
+    "fx.drive.drive": 30,
+    "fx.drive.mix": 80,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 12,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.8,
+    "fx.reverb.mix": 8,
+    "preset.level": 9.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Cutoff",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Squelch",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.4,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Arp Gate",
+      "mappings": [
+        {
+          "target": "arp.gate",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

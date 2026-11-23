@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "id": "60596f22-4ce3-5db9-bc1a-153f0e693d50",
+  "name": "Brass Section Hit",
+  "category": "Synth Brass",
+  "tags": [
+    "Bright",
+    "Big",
+    "Punchy",
+    "Classic",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "A whole section hitting one short chord: stacked octaves, a low square underneath, a blast of air at the start and a hall tail. The orchestra-hit style accent.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 22,
+    "osc.a.spread": 80,
+    "osc.a.unisonMix": 55,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": 1,
+    "osc.b.unisonVoices": 5,
+    "osc.b.detune": 18,
+    "osc.b.spread": 100,
+    "osc.b.level": 65,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 900,
+    "filter.resonance": 12,
+    "filter.drive": 25,
+    "filter.envAmount": 60,
+    "filter.keyTrack": 40,
+    "filter.velocity": 45,
+    "filterEnv.attack": 2,
+    "filterEnv.decay": 320,
+    "filterEnv.sustain": 25,
+    "filterEnv.release": 260,
+    "amp.attack": 1,
+    "amp.decay": 420,
+    "amp.sustain": 35,
+    "amp.release": 260,
+    "sub.level": 50,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Square",
+    "transient.enabled": true,
+    "transient.mode": "Both",
+    "transient.amount": 45,
+    "transient.duration": 35,
+    "transient.noiseColor": 60,
+    "transient.pitchSnap": -3,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tape Saturation",
+    "fx.drive.drive": 25,
+    "fx.drive.mix": 70,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": 2,
+    "fx.eq.midFreq": 1500,
+    "fx.eq.midGain": 3,
+    "fx.eq.highGain": 2,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 120,
+    "fx.imager.monoBass": true,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 1.8,
+    "fx.reverb.preDelay": 15,
+    "fx.reverb.mix": 24,
+    "preset.level": -1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.eq.highGain",
+          "deltaMin": -0.1,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Blast",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.2,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.reverb.decay",
+          "deltaMin": -0.08,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

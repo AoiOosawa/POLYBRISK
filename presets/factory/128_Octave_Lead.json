@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "3cc9ea7d-4365-5aca-a403-0a690e21d770",
+  "name": "Octave Lead",
+  "category": "Octave / Layered",
+  "tags": [
+    "Bright",
+    "Big",
+    "Classic",
+    "Layered",
+    "Mono"
+  ],
+  "author": "POLYBRISK",
+  "description": "One voice in two octaves: a narrow supersaw with a saw an octave above, sliding slightly between overlapping notes. A melody line that stays in front of a full mix.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 20,
+    "osc.a.spread": 45,
+    "osc.a.unisonMix": 40,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": 1,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 5200,
+    "filter.resonance": 10,
+    "filter.drive": 15,
+    "filter.envAmount": 18,
+    "filter.keyTrack": 50,
+    "filter.velocity": 25,
+    "filterEnv.attack": 1,
+    "filterEnv.decay": 400,
+    "filterEnv.sustain": 50,
+    "filterEnv.release": 200,
+    "amp.attack": 2,
+    "amp.decay": 500,
+    "amp.sustain": 88,
+    "amp.release": 160,
+    "voice.mode": "Legato",
+    "voice.glide": 30,
+    "performance.vibratoDepth": 25,
+    "performance.vibratoDelay": 300,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.midFreq": 2400,
+    "fx.eq.midGain": 2,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 18,
+    "fx.delay.ducking": 55,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.5,
+    "fx.reverb.mix": 12,
+    "preset.level": 5.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Octave",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.6,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Glide",
+      "mappings": [
+        {
+          "target": "voice.glide",
+          "deltaMin": -0.03,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.18,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

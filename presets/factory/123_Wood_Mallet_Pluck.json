@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "35f19227-9df5-5745-9c11-1fb41a34daa8",
+  "name": "Wood Mallet Pluck",
+  "category": "Synth Pluck",
+  "tags": [
+    "Warm",
+    "Clean",
+    "Soft",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "A round, woody knock with a short ring, like a marimba or a thumb piano. Repeating patterns and gentle melodies.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Triangle",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Sine",
+    "osc.b.octave": 2,
+    "osc.b.level": 28,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 2200,
+    "filter.envAmount": 35,
+    "filter.keyTrack": 70,
+    "filter.velocity": 45,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 120,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 120,
+    "amp.attack": 0.5,
+    "amp.decay": 420,
+    "amp.sustain": 0,
+    "amp.release": 260,
+    "amp.velocity": 80,
+    "transient.enabled": true,
+    "transient.mode": "Both",
+    "transient.amount": 30,
+    "transient.duration": 6,
+    "transient.noiseColor": 25,
+    "transient.pitchSnap": 5,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8",
+    "fx.delay.feedback": 25,
+    "fx.delay.mix": 0,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 1.0,
+    "fx.reverb.mix": 15,
+    "preset.level": 5.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Ring",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.release",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Overtone",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.3,
+          "deltaMax": 0.45,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Knock",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.14,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": 0.0,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

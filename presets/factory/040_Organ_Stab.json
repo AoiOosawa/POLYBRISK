@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "84270710-8c63-589e-932b-5019d5e761a2",
+  "name": "Organ Stab",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Warm",
+    "Clean",
+    "Classic",
+    "Tight"
+  ],
+  "author": "POLYBRISK",
+  "description": "Sine and triangle an octave apart with a click: a percussive organ chord for house piano parts.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Sine",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Triangle",
+    "osc.b.octave": 1,
+    "osc.b.level": 55,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 6000,
+    "filter.keyTrack": 40,
+    "amp.attack": 0.5,
+    "amp.decay": 300,
+    "amp.sustain": 20,
+    "amp.release": 90,
+    "transient.enabled": true,
+    "transient.mode": "Noise Burst",
+    "transient.amount": 30,
+    "transient.duration": 5,
+    "transient.noiseColor": 70,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Warm Saturation",
+    "fx.drive.drive": 25,
+    "fx.drive.mix": 50,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.7,
+    "fx.reverb.mix": 10,
+    "preset.level": 2.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Click",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Upper",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.5,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.sustain",
+          "deltaMin": -0.2,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

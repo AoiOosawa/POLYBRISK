@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "735d5892-94c4-5c3c-b3e3-afac2b9ec0c5",
+  "name": "Chip Octave Lead",
+  "category": "Lead / Hook",
+  "tags": [
+    "Bright",
+    "Hollow",
+    "Classic",
+    "Motion",
+    "Mono",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "A narrow pulse that flips up an octave and back on every 16th, in time with the song. The dry, bleeping lead of old game music.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 25,
+    "osc.a.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 14000,
+    "filter.keyTrack": 30,
+    "amp.attack": 0.5,
+    "amp.decay": 200,
+    "amp.sustain": 85,
+    "amp.release": 40,
+    "voice.mode": "Mono",
+    "lfo.wave": "Square",
+    "lfo.sync": true,
+    "lfo.division": "1/16",
+    "lfo.retrigger": true,
+    "lfo.pitch": 1200,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 0,
+    "preset.level": 4.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Width",
+      "mappings": [
+        {
+          "target": "osc.a.pulseWidth",
+          "deltaMin": -0.3,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Trill",
+      "mappings": [
+        {
+          "target": "lfo.pitch",
+          "deltaMin": -1.0,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Soften",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.5,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": 0.0,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

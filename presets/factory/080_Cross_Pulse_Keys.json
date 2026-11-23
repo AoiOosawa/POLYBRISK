@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "id": "9eccf378-05c7-5448-8a51-68d35ef1a598",
+  "name": "Cross Pulse Keys",
+  "category": "Trance Gate",
+  "tags": [
+    "Warm",
+    "Clean",
+    "Gate",
+    "Stereo"
+  ],
+  "author": "POLYBRISK",
+  "description": "Hard digital keys with the gaps of the gate placed differently on each side, plus swing. A shuffled, bouncing chord part.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Square",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 12,
+    "osc.b.octave": 1,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 7000,
+    "filter.keyTrack": 60,
+    "amp.attack": 1,
+    "amp.decay": 500,
+    "amp.sustain": 100,
+    "amp.release": 120,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 3,
+    "gate.swing": 30,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -1.5,
+    "fx.eq.highGain": 2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 12,
+    "preset.level": -5.5,
+    "gate.stereo": true
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Swing",
+      "mappings": [
+        {
+          "target": "gate.swing",
+          "deltaMin": -0.6,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Gate Width",
+      "mappings": [
+        {
+          "target": "gate.width",
+          "deltaMin": -0.8,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Cross Pulse",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    "gatePatternRight": [
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ]
+  }
+}

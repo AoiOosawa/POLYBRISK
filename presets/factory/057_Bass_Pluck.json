@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "7530c9f4-a859-574d-b6ab-2157e1d0ba4d",
+  "name": "Bass Pluck",
+  "category": "Bass",
+  "tags": [
+    "Dark",
+    "Punchy",
+    "Tight",
+    "Layered",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "A low pluck with a square sub underneath. Plays bass lines and low riffs; it is thin above middle C on purpose.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.octave": -1,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 35,
+    "osc.b.octave": -1,
+    "osc.b.fine": 6,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 220,
+    "filter.resonance": 18,
+    "filter.drive": 30,
+    "filter.envAmount": 58,
+    "filter.keyTrack": 40,
+    "filter.velocity": 45,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 170,
+    "filterEnv.sustain": 5,
+    "filterEnv.release": 120,
+    "amp.attack": 0.5,
+    "amp.decay": 360,
+    "amp.sustain": 15,
+    "amp.release": 110,
+    "sub.level": 60,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Square",
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": 2,
+    "fx.eq.midFreq": 900,
+    "fx.eq.midGain": 1.5,
+    "preset.level": 6.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Pluck",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Sub",
+      "mappings": [
+        {
+          "target": "sub.level",
+          "deltaMin": -0.6,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "filter.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

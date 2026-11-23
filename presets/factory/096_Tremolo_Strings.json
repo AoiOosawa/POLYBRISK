@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "eee92259-b2f0-507c-bbdb-1782c2c60506",
+  "name": "Tremolo Strings",
+  "category": "Pad / Strings",
+  "tags": [
+    "Warm",
+    "Classic",
+    "Wide",
+    "Motion",
+    "Slow"
+  ],
+  "author": "POLYBRISK",
+  "description": "A saw section whose volume trembles quickly, like bows shaking on the string. Tension under a scene; the mod wheel adds vibrato on top.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 16,
+    "osc.a.spread": 70,
+    "osc.a.unisonMix": 60,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": 1,
+    "osc.b.unisonVoices": 3,
+    "osc.b.detune": 12,
+    "osc.b.spread": 90,
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 2600,
+    "filter.keyTrack": 45,
+    "filter.velocity": 20,
+    "amp.attack": 90,
+    "amp.decay": 900,
+    "amp.sustain": 90,
+    "amp.release": 450,
+    "lfo.wave": "Triangle",
+    "lfo.rate": 6.5,
+    "lfo.retrigger": false,
+    "lfo.amp": 55,
+    "performance.vibratoDepth": 25,
+    "performance.vibratoRate": 5.8,
+    "performance.vibratoDelay": 300,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.midFreq": 2500,
+    "fx.eq.midGain": 1.5,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 2.6,
+    "fx.reverb.preDelay": 20,
+    "fx.reverb.mix": 26,
+    "preset.level": 1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Tremolo",
+      "mappings": [
+        {
+          "target": "lfo.amp",
+          "deltaMin": -0.45,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Speed",
+      "mappings": [
+        {
+          "target": "lfo.rate",
+          "deltaMin": -0.12,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

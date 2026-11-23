@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "id": "f9f9070a-5d6f-55eb-85fd-fca8bf18ecde",
+  "name": "Tresillo Fifths",
+  "category": "Trance Gate",
+  "tags": [
+    "Bright",
+    "Punchy",
+    "Gate",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "Root-and-fifth saws hit in a 3+3+2 tresillo. A Latin-pop chord rhythm from one held chord.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 12,
+    "osc.a.spread": 60,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.semitone": 7,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 2200,
+    "filter.resonance": 26,
+    "filter.keyTrack": 40,
+    "amp.attack": 1,
+    "amp.decay": 500,
+    "amp.sustain": 100,
+    "amp.release": 100,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 2,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.7,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 22,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/16",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 14,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.2,
+    "fx.reverb.mix": 12,
+    "preset.level": 3.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Squelch",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Swing",
+      "mappings": [
+        {
+          "target": "gate.swing",
+          "deltaMin": 0.0,
+          "deltaMax": 0.8,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Tresillo",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ]
+  }
+}

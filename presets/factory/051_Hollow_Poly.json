@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "24fa8cf7-715b-54af-a42f-bc3c2f8b0565",
+  "name": "Hollow Poly",
+  "category": "Bright Poly",
+  "tags": [
+    "Warm",
+    "Hollow",
+    "Soft"
+  ],
+  "author": "POLYBRISK",
+  "description": "Triangle over a square an octave below. Round and hollow, for chords in the middle register.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Triangle",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 8,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP12",
+    "filter.cutoff": 2800,
+    "filter.resonance": 6,
+    "filter.envAmount": 15,
+    "filter.keyTrack": 50,
+    "filter.velocity": 30,
+    "filterEnv.attack": 2,
+    "filterEnv.decay": 600,
+    "filterEnv.sustain": 40,
+    "filterEnv.release": 300,
+    "amp.attack": 4,
+    "amp.decay": 800,
+    "amp.sustain": 65,
+    "amp.release": 350,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.5,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 25,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.8,
+    "fx.reverb.mix": 18,
+    "preset.level": 1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Hollow",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.5,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Chorus",
+      "mappings": [
+        {
+          "target": "fx.chorus.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.18,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

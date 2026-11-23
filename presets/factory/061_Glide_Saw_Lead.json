@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "33eed972-ec73-55d0-867d-b91e3f8ab59c",
+  "name": "Glide Saw Lead",
+  "category": "Lead / Hook",
+  "tags": [
+    "Warm",
+    "Classic",
+    "Motion",
+    "Mono",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "One saw, one pulse and a sub, with a long glide between overlapping notes. The singing portamento lead.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 45,
+    "osc.b.fine": 6,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1500,
+    "filter.resonance": 22,
+    "filter.drive": 20,
+    "filter.envAmount": 28,
+    "filter.keyTrack": 75,
+    "filterEnv.attack": 3,
+    "filterEnv.decay": 500,
+    "filterEnv.sustain": 40,
+    "filterEnv.release": 220,
+    "amp.attack": 3,
+    "amp.decay": 400,
+    "amp.sustain": 92,
+    "amp.release": 180,
+    "voice.mode": "Legato",
+    "voice.glide": 220,
+    "sub.level": 35,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Sine",
+    "lfo.wave": "Triangle",
+    "lfo.rate": 1.2,
+    "lfo.pulseWidth": 30,
+    "performance.vibratoDepth": 40,
+    "performance.vibratoRate": 5.5,
+    "performance.vibratoDelay": 350,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.5,
+    "fx.chorus.depth": 30,
+    "fx.chorus.mix": 15,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 35,
+    "fx.delay.mix": 20,
+    "fx.delay.ducking": 40,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.8,
+    "fx.reverb.mix": 14,
+    "preset.level": 2.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Glide",
+      "mappings": [
+        {
+          "target": "voice.glide",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "PWM",
+      "mappings": [
+        {
+          "target": "lfo.pulseWidth",
+          "deltaMin": -0.3,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

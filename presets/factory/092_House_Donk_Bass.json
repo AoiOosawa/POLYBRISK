@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "0102b8dd-7df0-5b94-b8b2-cdc77523f301",
+  "name": "House Donk Bass",
+  "category": "Bass",
+  "tags": [
+    "Warm",
+    "Hollow",
+    "Tight",
+    "Mono",
+    "Layered",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "A square and a sine a twelfth above, with a pitch drop at the start and almost no sustain: a short, hollow organ knock. For off-beat house and garage bass lines.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Square",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Sine",
+    "osc.b.octave": 1,
+    "osc.b.semitone": 7,
+    "osc.b.level": 55,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP12",
+    "filter.cutoff": 400,
+    "filter.resonance": 8,
+    "filter.envAmount": 60,
+    "filter.keyTrack": 55,
+    "filter.velocity": 30,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 110,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 80,
+    "amp.attack": 0.5,
+    "amp.decay": 240,
+    "amp.sustain": 0,
+    "amp.release": 80,
+    "transient.enabled": true,
+    "transient.mode": "Pitch Snap",
+    "transient.amount": 30,
+    "transient.duration": 15,
+    "transient.pitchSnap": 12,
+    "voice.mode": "Mono",
+    "fx.imager.enabled": true,
+    "fx.imager.width": 60,
+    "fx.imager.monoBass": true,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.5,
+    "fx.reverb.mix": 6,
+    "preset.level": 12.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Tone",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Donk",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.1,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.06,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

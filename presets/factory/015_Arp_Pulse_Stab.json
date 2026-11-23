@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "cc790879-67ba-5895-a533-e86883f3e1db",
+  "name": "Arp Pulse Stab",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Bright",
+    "Tight",
+    "Wide",
+    "Arp"
+  ],
+  "author": "POLYBRISK",
+  "description": "Hold a chord: a two-octave 16th arpeggio of short pulse stabs with a ping-pong echo.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 40,
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 12,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": -1,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 900,
+    "filter.resonance": 22,
+    "filter.envAmount": 50,
+    "filter.keyTrack": 45,
+    "filter.velocity": 30,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 120,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 90,
+    "amp.attack": 0.5,
+    "amp.decay": 180,
+    "amp.sustain": 0,
+    "amp.release": 90,
+    "arp.enabled": true,
+    "arp.mode": "Up",
+    "arp.rate": "1/16",
+    "arp.octaves": 2,
+    "arp.gate": 55,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 35,
+    "fx.delay.mix": 22,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.8,
+    "fx.reverb.mix": 10,
+    "preset.level": 13.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Arp Gate",
+      "mappings": [
+        {
+          "target": "arp.gate",
+          "deltaMin": -0.4,
+          "deltaMax": 0.45,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Swing",
+      "mappings": [
+        {
+          "target": "arp.swing",
+          "deltaMin": 0.0,
+          "deltaMax": 0.8,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.22,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

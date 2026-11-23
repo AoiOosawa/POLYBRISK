@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "9cabf7e0-ab92-5c27-a1c9-78ac828949ad",
+  "name": "Resonant Sweep Poly",
+  "category": "Bright Poly",
+  "tags": [
+    "Bright",
+    "Classic"
+  ],
+  "author": "POLYBRISK",
+  "description": "Each note starts with the filter wide open and whistles its way down over a second. The falling, vowel-like sweep of vintage polysynths; best on slow chords and single held notes.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 10,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 40,
+    "osc.b.octave": -1,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 350,
+    "filter.resonance": 62,
+    "filter.envAmount": 80,
+    "filter.keyTrack": 40,
+    "filter.velocity": 20,
+    "filterEnv.attack": 1,
+    "filterEnv.decay": 1300,
+    "filterEnv.sustain": 10,
+    "filterEnv.release": 500,
+    "amp.attack": 3,
+    "amp.decay": 1500,
+    "amp.sustain": 75,
+    "amp.release": 500,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.4,
+    "fx.chorus.depth": 30,
+    "fx.chorus.mix": 15,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/4",
+    "fx.delay.feedback": 25,
+    "fx.delay.mix": 12,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.8,
+    "fx.reverb.mix": 16,
+    "preset.level": 3.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Sweep Time",
+      "mappings": [
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Whistle",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.4,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Depth",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.4,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.1,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.16,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

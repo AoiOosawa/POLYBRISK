@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "cfa9581e-b841-5d40-9fe9-03da3a5826bf",
+  "name": "Growl Brass",
+  "category": "Synth Brass",
+  "tags": [
+    "Warm",
+    "Aggressive",
+    "Dynamic",
+    "Motion",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "Hold a note and a fast filter flutter fades in, like a player growling into the horn. Short notes stay clean.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 12,
+    "osc.a.spread": 40,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 25,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Punch",
+    "filter.mode": "LP12",
+    "filter.cutoff": 1300,
+    "filter.resonance": 30,
+    "filter.drive": 35,
+    "filter.envAmount": 30,
+    "filter.keyTrack": 45,
+    "filter.velocity": 40,
+    "filterEnv.attack": 15,
+    "filterEnv.decay": 300,
+    "filterEnv.sustain": 60,
+    "filterEnv.release": 180,
+    "amp.attack": 5,
+    "amp.decay": 400,
+    "amp.sustain": 92,
+    "amp.release": 160,
+    "lfo.wave": "Saw",
+    "lfo.rate": 13,
+    "lfo.fade": 220,
+    "lfo.retrigger": true,
+    "lfo.cutoff": 30,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tube Saturation",
+    "fx.drive.drive": 30,
+    "fx.drive.mix": 70,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.7,
+    "fx.reverb.mix": 9,
+    "preset.level": -2.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Growl",
+      "mappings": [
+        {
+          "target": "lfo.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        },
+        {
+          "target": "lfo.rate",
+          "deltaMin": -0.1,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Fade In",
+      "mappings": [
+        {
+          "target": "lfo.fade",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.2,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

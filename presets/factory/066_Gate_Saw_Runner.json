@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "id": "7ade381c-1707-52da-9a3b-162fdd3619fb",
+  "name": "Gate Saw Runner",
+  "category": "Trance Gate",
+  "tags": [
+    "Bright",
+    "Wide",
+    "Gate"
+  ],
+  "author": "POLYBRISK",
+  "description": "Supersaw chopped by a syncopated 16th trance gate. Hold a chord and let the gate do the rhythm.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 36,
+    "osc.a.spread": 85,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "SuperSAW",
+    "osc.b.octave": 1,
+    "osc.b.unisonVoices": 5,
+    "osc.b.detune": 30,
+    "osc.b.spread": 100,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 9000,
+    "filter.keyTrack": 30,
+    "amp.attack": 2,
+    "amp.decay": 600,
+    "amp.sustain": 100,
+    "amp.release": 250,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 4,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.highGain": 2,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 115,
+    "fx.imager.monoBass": true,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 40,
+    "fx.delay.mix": 18,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.8,
+    "fx.reverb.mix": 18,
+    "preset.level": 0.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.35,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Gate Depth",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Swing",
+      "mappings": [
+        {
+          "target": "gate.swing",
+          "deltaMin": 0.0,
+          "deltaMax": 0.8,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.18,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.feedback",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Syncopated",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0
+    ]
+  }
+}

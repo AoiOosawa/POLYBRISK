@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "04c41d75-137e-58b3-b0e9-28d573c52bc9",
+  "name": "Dark Saw Bed",
+  "category": "SuperSAW",
+  "tags": [
+    "Dark",
+    "Mix Ready"
+  ],
+  "author": "POLYBRISK",
+  "description": "Low-passed supersaw that stays behind the vocal. A verse bed, not a hook.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 26,
+    "osc.a.spread": 65,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": -1,
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1200,
+    "filter.resonance": 6,
+    "filter.drive": 20,
+    "filter.keyTrack": 45,
+    "amp.attack": 12,
+    "amp.decay": 900,
+    "amp.sustain": 85,
+    "amp.release": 320,
+    "fx.eq.enabled": true,
+    "fx.eq.highGain": -2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 1.1,
+    "fx.reverb.mix": 12,
+    "preset.level": -1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Open",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.15,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Warmth",
+      "mappings": [
+        {
+          "target": "filter.drive",
+          "deltaMin": -0.2,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.eq.lowGain",
+          "deltaMin": -0.1,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

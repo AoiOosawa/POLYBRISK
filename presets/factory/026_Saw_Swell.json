@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "b1465004-2367-58d4-bb50-403628d8f4c3",
+  "name": "Saw Swell",
+  "category": "Pad / Strings",
+  "tags": [
+    "Bright",
+    "Wide",
+    "Slow"
+  ],
+  "author": "POLYBRISK",
+  "description": "Fades in over half a second while the filter opens. For the bar before the chorus.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 38,
+    "osc.a.spread": 90,
+    "osc.a.unisonMix": 64,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "SuperSAW",
+    "osc.b.octave": 1,
+    "osc.b.unisonVoices": 5,
+    "osc.b.detune": 30,
+    "osc.b.spread": 100,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 500,
+    "filter.envAmount": 55,
+    "filter.keyTrack": 30,
+    "filterEnv.attack": 900,
+    "filterEnv.decay": 2000,
+    "filterEnv.sustain": 100,
+    "filterEnv.release": 600,
+    "amp.attack": 600,
+    "amp.decay": 1000,
+    "amp.sustain": 100,
+    "amp.release": 500,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 0.35,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 25,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.8,
+    "fx.reverb.mix": 30,
+    "fx.reverb.preDelay": 20,
+    "preset.level": -3.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Swell Time",
+      "mappings": [
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

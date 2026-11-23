@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "7e5af954-e05b-5845-b327-b8c1a85096b2",
+  "name": "Fast Chop Glass",
+  "category": "Trance Gate",
+  "tags": [
+    "Bright",
+    "Clean",
+    "Wide",
+    "Gate"
+  ],
+  "author": "POLYBRISK",
+  "description": "Glassy pulse chords under a thirty-second-note gate with longer notes mixed in. A busy, glittering top line.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 22,
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 8,
+    "osc.a.spread": 70,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Triangle",
+    "osc.b.octave": 1,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "HP12",
+    "filter.cutoff": 300,
+    "filter.resonance": 8,
+    "filter.keyTrack": 30,
+    "amp.attack": 1,
+    "amp.decay": 600,
+    "amp.sustain": 100,
+    "amp.release": 180,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/32",
+    "gate.depth": 100,
+    "gate.smooth": 1.5,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 0.7,
+    "fx.chorus.depth": 35,
+    "fx.chorus.mix": 25,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8",
+    "fx.delay.feedback": 25,
+    "fx.delay.mix": 10,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.8,
+    "fx.reverb.mix": 22,
+    "preset.level": -4.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Gate Depth",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Smooth",
+      "mappings": [
+        {
+          "target": "gate.smooth",
+          "deltaMin": -0.05,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Long Start",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0
+    ]
+  }
+}

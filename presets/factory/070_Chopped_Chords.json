@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "id": "edabe6dc-5954-5f1e-9376-c4483fc582ce",
+  "name": "Chopped Chords",
+  "category": "Trance Gate",
+  "tags": [
+    "Warm",
+    "Punchy",
+    "Gate"
+  ],
+  "author": "POLYBRISK",
+  "description": "A sustaining chord cut into syncopated 16ths with accents. Hold the chord; the gate plays the stabs.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 24,
+    "osc.a.spread": 75,
+    "osc.a.unisonMix": 38,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 2600,
+    "filter.resonance": 12,
+    "filter.keyTrack": 40,
+    "amp.attack": 1,
+    "amp.decay": 500,
+    "amp.sustain": 85,
+    "amp.release": 120,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 2,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 14,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.8,
+    "fx.reverb.mix": 10,
+    "preset.level": 3.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Chop",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        },
+        {
+          "target": "gate.smooth",
+          "deltaMin": -0.1,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Swing",
+      "mappings": [
+        {
+          "target": "gate.swing",
+          "deltaMin": 0.0,
+          "deltaMax": 0.8,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Chop Accent",
+    "gatePatternEdited": true,
+    "gatePattern": [
+      1,
+      0,
+      0.6,
+      1,
+      0,
+      1,
+      0,
+      0.6,
+      1,
+      0,
+      0,
+      1,
+      0.6,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0.6,
+      1,
+      0,
+      1,
+      0,
+      0.6,
+      1,
+      0,
+      0,
+      1,
+      0.6,
+      0,
+      1,
+      0
+    ]
+  }
+}

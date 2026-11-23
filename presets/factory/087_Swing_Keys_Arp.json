@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "id": "926af5b9-b43f-570e-91fd-2009403cb4b8",
+  "name": "Swing Keys Arp",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Warm",
+    "Punchy",
+    "Classic",
+    "Arp"
+  ],
+  "author": "POLYBRISK",
+  "description": "Plays the notes in the order you press them, in swung eighths. Short electric-piano-like stabs for house and funk grooves.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Triangle",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 25,
+    "osc.b.level": 30,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP12",
+    "filter.cutoff": 1600,
+    "filter.resonance": 10,
+    "filter.envAmount": 35,
+    "filter.keyTrack": 50,
+    "filter.velocity": 50,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 180,
+    "filterEnv.sustain": 15,
+    "filterEnv.release": 120,
+    "amp.attack": 0.5,
+    "amp.decay": 350,
+    "amp.sustain": 20,
+    "amp.release": 130,
+    "arp.enabled": true,
+    "arp.mode": "As Played",
+    "arp.rate": "1/8",
+    "arp.octaves": 1,
+    "arp.gate": 55,
+    "arp.swing": 35,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Warm Saturation",
+    "fx.drive.drive": 18,
+    "fx.drive.mix": 60,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 12,
+    "preset.level": 12.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Swing",
+      "mappings": [
+        {
+          "target": "arp.swing",
+          "deltaMin": -0.7,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Arp Gate",
+      "mappings": [
+        {
+          "target": "arp.gate",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

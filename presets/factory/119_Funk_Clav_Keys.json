@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "17676724-0dce-57f1-936f-7ccb9acc0e1a",
+  "name": "Funk Clav Keys",
+  "category": "Bright Poly",
+  "tags": [
+    "Bright",
+    "Punchy",
+    "Tight",
+    "Motion",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "A thin, biting pulse with a quick resonant snap on every note and no tail: the clavinet-style part. Sixteenth-note funk comping; hit harder for more bite.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 14,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 800,
+    "filter.resonance": 26,
+    "filter.drive": 25,
+    "filter.envAmount": 55,
+    "filter.keyTrack": 70,
+    "filter.velocity": 60,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 150,
+    "filterEnv.sustain": 15,
+    "filterEnv.release": 60,
+    "amp.attack": 0.5,
+    "amp.decay": 450,
+    "amp.sustain": 25,
+    "amp.release": 45,
+    "fx.phaser.enabled": true,
+    "fx.phaser.type": "Phaser",
+    "fx.phaser.rate": 0.4,
+    "fx.phaser.depth": 60,
+    "fx.phaser.feedback": 35,
+    "fx.phaser.mix": 0,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -3,
+    "fx.eq.midFreq": 1800,
+    "fx.eq.midGain": 3,
+    "fx.eq.highGain": 1,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.4,
+    "fx.reverb.mix": 5,
+    "preset.level": 0.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bite",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Thin",
+      "mappings": [
+        {
+          "target": "osc.a.pulseWidth",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Phase",
+      "mappings": [
+        {
+          "target": "fx.phaser.mix",
+          "deltaMin": 0.0,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "5692a22d-1930-5a13-8ca1-0e138de62646",
+  "name": "Octave Bounce Bass",
+  "category": "Bass",
+  "tags": [
+    "Dark",
+    "Punchy",
+    "Tight",
+    "Arp",
+    "Layered",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "Hold one low note: the arpeggiator bounces it between two octaves in eighths. A dry, centred bass line for under a pad or supersaw.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 35,
+    "osc.b.octave": -1,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 500,
+    "filter.resonance": 16,
+    "filter.drive": 25,
+    "filter.envAmount": 45,
+    "filter.keyTrack": 40,
+    "filter.velocity": 35,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 160,
+    "filterEnv.sustain": 10,
+    "filterEnv.release": 90,
+    "amp.attack": 0.5,
+    "amp.decay": 260,
+    "amp.sustain": 30,
+    "amp.release": 90,
+    "sub.level": 45,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Sine",
+    "arp.enabled": true,
+    "arp.mode": "Up",
+    "arp.rate": "1/8",
+    "arp.octaves": 2,
+    "arp.gate": 60,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 60,
+    "fx.imager.monoBass": true,
+    "preset.level": 12.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Cutoff",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Punch",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Arp Gate",
+      "mappings": [
+        {
+          "target": "arp.gate",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Sub",
+      "mappings": [
+        {
+          "target": "sub.level",
+          "deltaMin": -0.4,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

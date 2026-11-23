@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 260" width="1180" height="260">
+  <!-- POLYBRISK horizontal logo (provisional). Text uses system fonts; outline it before release. -->
+  <defs>
+    <linearGradient id="saw" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd23c"/>
+      <stop offset="0.55" stop-color="#ff6a3c"/>
+      <stop offset="1" stop-color="#ff3c8e"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round" transform="translate(-60 -168) scale(0.56)">
+    <path d="M196 598 L374 346 L374 598 L552 346 L552 598 L730 346 L730 598" stroke="#3cd6ff" stroke-opacity="0.55" stroke-width="34"/>
+    <path d="M250 706 L462 438 L462 706 L674 438 L674 706 L828 511" stroke="#8a6bff" stroke-opacity="0.6" stroke-width="34"/>
+    <path d="M214 656 L410 388 L410 656 L606 388 L606 656 L802 388 L802 656" stroke="url(#saw)" stroke-width="52"/>
+  </g>
+  <text x="450" y="168" font-family="'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="112" font-weight="800" font-style="italic" letter-spacing="6" fill="#f4f5fb">POLYBRISK</text>
+</svg>

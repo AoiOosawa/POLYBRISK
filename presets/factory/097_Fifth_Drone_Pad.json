@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "b3bec419-e898-59ed-810a-0800c5560f15",
+  "name": "Fifth Drone Pad",
+  "category": "Pad / Strings",
+  "tags": [
+    "Warm",
+    "Big",
+    "Wide",
+    "Layered",
+    "Slow"
+  ],
+  "author": "POLYBRISK",
+  "description": "Saws a fifth apart over a sub, opening very slowly over several seconds. Hold one or two notes and let it grow under a build.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 14,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.semitone": 7,
+    "osc.b.unisonVoices": 3,
+    "osc.b.detune": 14,
+    "osc.b.spread": 100,
+    "osc.b.level": 55,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 350,
+    "filter.resonance": 20,
+    "filter.drive": 15,
+    "filter.envAmount": 50,
+    "filter.keyTrack": 30,
+    "filterEnv.attack": 3500,
+    "filterEnv.decay": 4000,
+    "filterEnv.sustain": 80,
+    "filterEnv.release": 1500,
+    "amp.attack": 500,
+    "amp.decay": 2000,
+    "amp.sustain": 100,
+    "amp.release": 1500,
+    "sub.level": 40,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Sine",
+    "fx.imager.enabled": true,
+    "fx.imager.width": 120,
+    "fx.imager.monoBass": true,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 5.0,
+    "fx.reverb.mix": 30,
+    "preset.level": -6.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Rise",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Sub",
+      "mappings": [
+        {
+          "target": "sub.level",
+          "deltaMin": -0.4,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.reverb.decay",
+          "deltaMin": -0.1,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

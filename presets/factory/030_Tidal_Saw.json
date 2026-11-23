@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "37411d71-cc2f-5db0-bf56-eb64349f7fc1",
+  "name": "Tidal Saw",
+  "category": "Pad / Strings",
+  "tags": [
+    "Warm",
+    "Wide",
+    "Motion",
+    "Slow"
+  ],
+  "author": "POLYBRISK",
+  "description": "The filter rises and falls once every two bars, in time with the song. A pad that breathes with the tempo.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 32,
+    "osc.a.spread": 85,
+    "osc.a.unisonMix": 62,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 30,
+    "osc.b.octave": -1,
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1400,
+    "filter.resonance": 22,
+    "filter.drive": 10,
+    "filter.keyTrack": 35,
+    "amp.attack": 60,
+    "amp.decay": 1000,
+    "amp.sustain": 95,
+    "amp.release": 700,
+    "lfo.wave": "Triangle",
+    "lfo.sync": true,
+    "lfo.division": "2 Bars",
+    "lfo.cutoff": 40,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.4,
+    "fx.chorus.depth": 35,
+    "fx.chorus.mix": 20,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/4",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 10,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.4,
+    "fx.reverb.mix": 26,
+    "preset.level": -3.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Tide",
+      "mappings": [
+        {
+          "target": "lfo.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Resonance",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

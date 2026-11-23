@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "id": "61ffd36a-8bc4-59c5-9697-1f5d0cf5abd8",
+  "name": "Split Gallop Organ",
+  "category": "Trance Gate",
+  "tags": [
+    "Warm",
+    "Clean",
+    "Wide",
+    "Gate",
+    "Stereo",
+    "Motion",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "A drawbar-style organ: the downbeats hit on the left and the gallop answers on the right. Rhythm guitar for a keyboard player.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Sine",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Triangle",
+    "osc.b.octave": 1,
+    "osc.b.semitone": 7,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 5000,
+    "filter.keyTrack": 40,
+    "amp.attack": 1,
+    "amp.decay": 300,
+    "amp.sustain": 100,
+    "amp.release": 60,
+    "sub.level": 40,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Sine",
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 2,
+    "gate.width": 85,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Warm Saturation",
+    "fx.drive.drive": 35,
+    "fx.drive.mix": 60,
+    "fx.phaser.enabled": true,
+    "fx.phaser.type": "Phaser",
+    "fx.phaser.rate": 0.8,
+    "fx.phaser.depth": 35,
+    "fx.phaser.feedback": 20,
+    "fx.phaser.mix": 25,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.8,
+    "fx.reverb.mix": 12,
+    "preset.level": 0.0,
+    "gate.stereo": true
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Upper",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.5,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Gate Width",
+      "mappings": [
+        {
+          "target": "gate.width",
+          "deltaMin": -0.8,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Gate Depth",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.2,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Split Gallop",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "gatePatternRight": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "3b1dbf79-2caf-5ed9-bf27-b00e54d103a6",
+  "name": "Staccato Hook",
+  "category": "Lead / Hook",
+  "tags": [
+    "Bright",
+    "Punchy",
+    "Clean"
+  ],
+  "author": "POLYBRISK",
+  "description": "A short, bright note that dies away by itself and leaves a dotted echo behind. For fast melodic hooks; it can also play two-note harmonies.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": 1,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 1800,
+    "filter.resonance": 18,
+    "filter.envAmount": 50,
+    "filter.keyTrack": 65,
+    "filter.velocity": 35,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 200,
+    "filterEnv.sustain": 10,
+    "filterEnv.release": 160,
+    "amp.attack": 0.5,
+    "amp.decay": 280,
+    "amp.sustain": 10,
+    "amp.release": 160,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.highGain": 2,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 42,
+    "fx.delay.mix": 26,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.4,
+    "fx.reverb.mix": 14,
+    "preset.level": 7.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Snap",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.24,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.feedback",
+          "deltaMin": -0.2,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

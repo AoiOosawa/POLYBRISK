@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "9bcd7e29-bf86-5bdb-b557-728b558b8db6",
+  "name": "Pop Keys",
+  "category": "Bright Poly",
+  "tags": [
+    "Warm",
+    "Punchy",
+    "Mix Ready"
+  ],
+  "author": "POLYBRISK",
+  "description": "Velocity-sensitive saw and square keys for chord comping. Play softly for a darker tone.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 10,
+    "osc.a.spread": 45,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.fine": 4,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 2400,
+    "filter.resonance": 10,
+    "filter.envAmount": 30,
+    "filter.keyTrack": 50,
+    "filter.velocity": 50,
+    "filterEnv.attack": 1,
+    "filterEnv.decay": 450,
+    "filterEnv.sustain": 35,
+    "filterEnv.release": 260,
+    "amp.attack": 2,
+    "amp.decay": 700,
+    "amp.sustain": 60,
+    "amp.release": 260,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -1.5,
+    "fx.eq.highGain": 2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 12,
+    "preset.level": 1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Dynamics",
+      "mappings": [
+        {
+          "target": "filter.velocity",
+          "deltaMin": -0.5,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.velocity",
+          "deltaMin": -0.5,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Decay",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.sustain",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

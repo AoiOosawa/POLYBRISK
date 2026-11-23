@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "af5fb468-333a-5c02-b1f9-f77cf7c2bb2a",
+  "name": "Tremolo Keys",
+  "category": "Bright Poly",
+  "tags": [
+    "Warm",
+    "Soft",
+    "Classic",
+    "Motion"
+  ],
+  "author": "POLYBRISK",
+  "description": "Round triangle keys with a steady amplitude tremolo, like an electric piano through its vibrato circuit.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Triangle",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Sine",
+    "osc.b.octave": 1,
+    "osc.b.level": 22,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Analog",
+    "filter.mode": "LP12",
+    "filter.cutoff": 2600,
+    "filter.envAmount": 22,
+    "filter.keyTrack": 55,
+    "filter.velocity": 55,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 500,
+    "filterEnv.sustain": 20,
+    "filterEnv.release": 300,
+    "amp.attack": 1,
+    "amp.decay": 1400,
+    "amp.sustain": 35,
+    "amp.release": 320,
+    "amp.velocity": 70,
+    "transient.enabled": true,
+    "transient.mode": "Noise Burst",
+    "transient.amount": 14,
+    "transient.duration": 6,
+    "transient.noiseColor": 40,
+    "lfo.wave": "Sine",
+    "lfo.rate": 5.2,
+    "lfo.amp": 45,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Warm Saturation",
+    "fx.drive.drive": 18,
+    "fx.drive.mix": 50,
+    "fx.phaser.enabled": true,
+    "fx.phaser.type": "Phaser",
+    "fx.phaser.rate": 0.25,
+    "fx.phaser.depth": 40,
+    "fx.phaser.feedback": 20,
+    "fx.phaser.mix": 25,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 1.0,
+    "fx.reverb.mix": 14,
+    "preset.level": 3.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Tremolo",
+      "mappings": [
+        {
+          "target": "lfo.amp",
+          "deltaMin": -0.45,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Speed",
+      "mappings": [
+        {
+          "target": "lfo.rate",
+          "deltaMin": -0.1,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

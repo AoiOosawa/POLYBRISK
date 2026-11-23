@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "0733c228-afb4-5efb-96e1-9f2600d46215",
+  "name": "Vintage Ensemble",
+  "category": "Pad / Strings",
+  "tags": [
+    "Warm",
+    "Classic",
+    "Wide",
+    "Slow"
+  ],
+  "author": "POLYBRISK",
+  "description": "Three saws through a deep classic chorus, in the manner of an old string ensemble.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 20,
+    "osc.a.spread": 60,
+    "osc.a.unisonMix": 62,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": 1,
+    "osc.b.fine": -5,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP12",
+    "filter.cutoff": 3800,
+    "filter.resonance": 5,
+    "filter.keyTrack": 40,
+    "amp.attack": 40,
+    "amp.decay": 900,
+    "amp.sustain": 90,
+    "amp.release": 500,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.55,
+    "fx.chorus.depth": 80,
+    "fx.chorus.mix": 55,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.highGain": -1,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 1.3,
+    "fx.reverb.mix": 15,
+    "preset.level": -2.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Ensemble",
+      "mappings": [
+        {
+          "target": "fx.chorus.depth",
+          "deltaMin": -0.5,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.chorus.mix",
+          "deltaMin": -0.4,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Attack",
+      "mappings": [
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

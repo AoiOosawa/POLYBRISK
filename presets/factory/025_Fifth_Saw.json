@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "id": "aaa09e90-d39d-5b68-9f7e-79b8efe53707",
+  "name": "Fifth Saw",
+  "category": "SuperSAW",
+  "tags": [
+    "Bright",
+    "Big",
+    "Punchy",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "Second oscillator a fifth up, kept narrow and pushed through tape drive. One note is already a power chord: play single lines.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 24,
+    "osc.a.spread": 45,
+    "osc.a.unisonMix": 40,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.semitone": 7,
+    "osc.b.unisonVoices": 3,
+    "osc.b.detune": 14,
+    "osc.b.spread": 55,
+    "osc.b.level": 65,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 5200,
+    "filter.resonance": 8,
+    "filter.drive": 25,
+    "filter.keyTrack": 30,
+    "amp.attack": 2,
+    "amp.decay": 600,
+    "amp.sustain": 85,
+    "amp.release": 180,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tape Saturation",
+    "fx.drive.drive": 30,
+    "fx.drive.mix": 70,
+    "fx.eq.enabled": true,
+    "fx.eq.midFreq": 1600,
+    "fx.eq.midGain": 2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 10,
+    "preset.level": -3.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Fifth",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.6,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.25,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.drive",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

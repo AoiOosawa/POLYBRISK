@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "6813a6a3-4a48-5040-9708-9c2567e33172",
+  "name": "Wide Chorus Brass",
+  "category": "Synth Brass",
+  "tags": [
+    "Warm",
+    "Classic",
+    "Wide"
+  ],
+  "author": "POLYBRISK",
+  "description": "Eighties brass: one saw per side of a wide chorus, with a plate behind it.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 12,
+    "osc.a.spread": 80,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.fine": 9,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP12",
+    "filter.cutoff": 900,
+    "filter.resonance": 8,
+    "filter.envAmount": 42,
+    "filter.keyTrack": 55,
+    "filter.velocity": 35,
+    "filterEnv.attack": 35,
+    "filterEnv.decay": 400,
+    "filterEnv.sustain": 55,
+    "filterEnv.release": 260,
+    "amp.attack": 10,
+    "amp.decay": 500,
+    "amp.sustain": 88,
+    "amp.release": 240,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 0.6,
+    "fx.chorus.depth": 55,
+    "fx.chorus.mix": 40,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 125,
+    "fx.imager.monoBass": true,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.9,
+    "fx.reverb.mix": 20,
+    "preset.level": 0.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Chorus",
+      "mappings": [
+        {
+          "target": "fx.chorus.mix",
+          "deltaMin": -0.35,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.chorus.depth",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Attack",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Plate",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

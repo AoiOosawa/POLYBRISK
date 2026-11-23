@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "95cf4077-bdf9-511a-a8ec-d84f59cfdeaa",
+  "name": "Analog Fanfare",
+  "category": "Synth Brass",
+  "tags": [
+    "Warm",
+    "Big",
+    "Classic",
+    "Wide"
+  ],
+  "author": "POLYBRISK",
+  "description": "Each note opens slowly with a resonant sweep, from dark to bright. Long held chords for intros and endings; not for fast lines.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 24,
+    "osc.a.spread": 75,
+    "osc.a.unisonMix": 58,
+    "osc.a.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 220,
+    "filter.resonance": 42,
+    "filter.drive": 20,
+    "filter.envAmount": 72,
+    "filter.keyTrack": 40,
+    "filter.velocity": 25,
+    "filterEnv.attack": 260,
+    "filterEnv.decay": 1400,
+    "filterEnv.sustain": 70,
+    "filterEnv.release": 420,
+    "amp.attack": 25,
+    "amp.decay": 800,
+    "amp.sustain": 95,
+    "amp.release": 380,
+    "performance.vibratoDepth": 30,
+    "performance.vibratoDelay": 600,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 0.4,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 24,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.2,
+    "fx.reverb.mix": 24,
+    "preset.level": -1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Sweep",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.3,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.25,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Swell",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.35,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.reverb.decay",
+          "deltaMin": -0.1,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

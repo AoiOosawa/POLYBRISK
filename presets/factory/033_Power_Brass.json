@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "78cd2f1d-c1c1-559a-b446-c4e220806c9c",
+  "name": "Power Brass",
+  "category": "Synth Brass",
+  "tags": [
+    "Bright",
+    "Aggressive",
+    "Punchy",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "Hard-clipped and mid-heavy, with a pitch blip on the attack and a filter that snaps shut. Short loud riffs, not chords.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 10,
+    "osc.a.spread": 30,
+    "osc.a.unisonMix": 36,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 650,
+    "filter.resonance": 26,
+    "filter.drive": 55,
+    "filter.envAmount": 62,
+    "filter.keyTrack": 50,
+    "filter.velocity": 45,
+    "filterEnv.attack": 3,
+    "filterEnv.decay": 170,
+    "filterEnv.sustain": 38,
+    "filterEnv.release": 140,
+    "amp.attack": 2,
+    "amp.decay": 350,
+    "amp.sustain": 85,
+    "amp.release": 120,
+    "transient.enabled": true,
+    "transient.mode": "Pitch Snap",
+    "transient.amount": 30,
+    "transient.duration": 28,
+    "transient.pitchSnap": 7,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Hard Clip",
+    "fx.drive.drive": 48,
+    "fx.drive.tone": 65,
+    "fx.drive.mix": 85,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -1.5,
+    "fx.eq.midFreq": 1500,
+    "fx.eq.midGain": 4,
+    "fx.eq.highGain": -1,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.6,
+    "fx.reverb.mix": 8,
+    "preset.level": -3.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.35,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Bite",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.08,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

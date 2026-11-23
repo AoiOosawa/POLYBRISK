@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "cf23eb92-f04d-5207-a11c-c704784f2a4b",
+  "name": "Wobble Bass",
+  "category": "Bass",
+  "tags": [
+    "Dark",
+    "Aggressive",
+    "Motion",
+    "Mono",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "A driven resonant low-pass opened and closed by a tempo-synced LFO, twice per beat. Hold a note and it talks in time with the song.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 70,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 260,
+    "filter.resonance": 40,
+    "filter.drive": 45,
+    "filter.keyTrack": 30,
+    "amp.attack": 2,
+    "amp.decay": 500,
+    "amp.sustain": 95,
+    "amp.release": 110,
+    "voice.mode": "Legato",
+    "voice.glide": 40,
+    "lfo.wave": "Sine",
+    "lfo.sync": true,
+    "lfo.division": "1/8",
+    "lfo.retrigger": false,
+    "lfo.cutoff": 55,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tube Saturation",
+    "fx.drive.drive": 40,
+    "fx.drive.mix": 75,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 80,
+    "fx.imager.monoBass": true,
+    "preset.level": 1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Wobble",
+      "mappings": [
+        {
+          "target": "lfo.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Cutoff",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Growl",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Glide",
+      "mappings": [
+        {
+          "target": "voice.glide",
+          "deltaMin": -0.05,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

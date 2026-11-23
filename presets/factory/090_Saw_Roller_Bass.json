@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "3fa38257-4b49-576a-a199-8c52e56b166c",
+  "name": "Saw Roller Bass",
+  "category": "Bass",
+  "tags": [
+    "Bright",
+    "Big",
+    "Mono",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "Three detuned saws over a saw an octave down, with the filter left open and full sustain. The bright, rolling off-beat bass of trance and EDM.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 18,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": -1,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 1100,
+    "filter.resonance": 8,
+    "filter.envAmount": 20,
+    "filter.keyTrack": 60,
+    "filter.velocity": 25,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 300,
+    "filterEnv.sustain": 40,
+    "filterEnv.release": 120,
+    "amp.attack": 1,
+    "amp.decay": 400,
+    "amp.sustain": 85,
+    "amp.release": 70,
+    "voice.mode": "Mono",
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": 1.5,
+    "fx.eq.highGain": 2,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 100,
+    "fx.imager.monoBass": true,
+    "preset.level": 4.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.spread",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Bite",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.15,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.resonance",
+          "deltaMin": 0.0,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Release",
+      "mappings": [
+        {
+          "target": "amp.release",
+          "deltaMin": -0.05,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

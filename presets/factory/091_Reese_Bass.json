@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "id": "da9e1994-51ee-591b-a58a-0e46626448af",
+  "name": "Reese Bass",
+  "category": "Bass",
+  "tags": [
+    "Dark",
+    "Aggressive",
+    "Motion",
+    "Mono",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "Detuned saws that beat against each other, with a slow phaser moving through the top. The growling held bass of drum and bass and garage.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 35,
+    "osc.a.spread": 40,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.fine": 9,
+    "osc.b.level": 80,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 600,
+    "filter.resonance": 10,
+    "filter.keyTrack": 40,
+    "amp.attack": 4,
+    "amp.decay": 600,
+    "amp.sustain": 95,
+    "amp.release": 160,
+    "voice.mode": "Legato",
+    "voice.glide": 90,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Soft Clip",
+    "fx.drive.drive": 30,
+    "fx.drive.mix": 70,
+    "fx.phaser.enabled": true,
+    "fx.phaser.type": "Phaser",
+    "fx.phaser.rate": 0.15,
+    "fx.phaser.depth": 50,
+    "fx.phaser.feedback": 30,
+    "fx.phaser.mix": 35,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 110,
+    "fx.imager.monoBass": true,
+    "preset.level": 1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Cutoff",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.25,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.b.fine",
+          "deltaMin": -0.05,
+          "deltaMax": 0.1,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Phase",
+      "mappings": [
+        {
+          "target": "fx.phaser.mix",
+          "deltaMin": -0.35,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.phaser.rate",
+          "deltaMin": 0.0,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

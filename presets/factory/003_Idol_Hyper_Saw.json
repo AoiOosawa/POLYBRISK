@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "07858560-260f-5b40-af32-2ae084bdaecf",
+  "name": "Idol Hyper Saw",
+  "category": "SuperSAW",
+  "tags": [
+    "Bright",
+    "Big",
+    "Airy",
+    "Wide",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "A glittering hyper saw: a bright layer two octaves up, sixteenth-note echoes that sparkle left and right, and a shiny plate. Light in the lows on purpose. For the sweetest, brightest hook of an idol-pop chorus.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 9,
+    "osc.a.detune": 50,
+    "osc.a.spread": 100,
+    "osc.a.unisonMix": 68,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "SuperSAW",
+    "osc.b.octave": 2,
+    "osc.b.unisonVoices": 7,
+    "osc.b.detune": 38,
+    "osc.b.spread": 100,
+    "osc.b.level": 62,
+    "osc.b.unisonMix": 72,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 18000,
+    "filter.keyTrack": 20,
+    "amp.attack": 2,
+    "amp.decay": 700,
+    "amp.sustain": 85,
+    "amp.release": 260,
+    "transient.enabled": true,
+    "transient.mode": "Noise Burst",
+    "transient.amount": 26,
+    "transient.duration": 10,
+    "transient.noiseColor": 90,
+    "noise.level": 12,
+    "noise.color": 92,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 1.1,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 26,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -5,
+    "fx.eq.midFreq": 4500,
+    "fx.eq.midGain": 2,
+    "fx.eq.highGain": 6,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 140,
+    "fx.imager.monoBass": true,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/16",
+    "fx.delay.feedback": 38,
+    "fx.delay.tone": 85,
+    "fx.delay.mix": 20,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 2.0,
+    "fx.reverb.tone": 90,
+    "fx.reverb.mix": 22,
+    "preset.level": -1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Sparkle",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.4,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.eq.highGain",
+          "deltaMin": -0.2,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Hype",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.22,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Twinkle",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.feedback",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.reverb.decay",
+          "deltaMin": -0.1,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

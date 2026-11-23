@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "id": "1e08e723-62e4-5c3c-b596-f0419a063f22",
+  "name": "Ping Pong Gate Pad",
+  "category": "Trance Gate",
+  "tags": [
+    "Warm",
+    "Soft",
+    "Wide",
+    "Gate",
+    "Stereo"
+  ],
+  "author": "POLYBRISK",
+  "description": "A warm pad cut into eighth notes that alternate left and right. Wide and gentle; lower Width to bring it back to the centre.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 18,
+    "osc.a.spread": 40,
+    "osc.a.unisonMix": 62,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Triangle",
+    "osc.b.octave": -1,
+    "osc.b.level": 55,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 1800,
+    "filter.resonance": 10,
+    "filter.keyTrack": 45,
+    "amp.attack": 30,
+    "amp.decay": 900,
+    "amp.sustain": 100,
+    "amp.release": 500,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 90,
+    "gate.smooth": 14,
+    "gate.width": 100,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.45,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 22,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.0,
+    "fx.reverb.mix": 26,
+    "preset.level": 1.0,
+    "gate.stereo": true
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Gate Width",
+      "mappings": [
+        {
+          "target": "gate.width",
+          "deltaMin": -0.8,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Gate Depth",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        },
+        {
+          "target": "gate.smooth",
+          "deltaMin": 0.0,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Ping Pong 8",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "gatePatternRight": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1
+    ]
+  }
+}

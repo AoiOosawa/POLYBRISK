@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "23a58d42-f93b-57d2-95ed-19724584d853",
+  "name": "Muted Brass",
+  "category": "Synth Brass",
+  "tags": [
+    "Bright",
+    "Hollow",
+    "Tight"
+  ],
+  "author": "POLYBRISK",
+  "description": "Thin, nasal and buzzy, like trumpets with mutes in. Small enough to sit behind a vocal; quiet riffs and answering phrases.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 18,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "BP12",
+    "filter.cutoff": 1700,
+    "filter.resonance": 38,
+    "filter.drive": 30,
+    "filter.envAmount": 22,
+    "filter.keyTrack": 70,
+    "filter.velocity": 40,
+    "filterEnv.attack": 10,
+    "filterEnv.decay": 220,
+    "filterEnv.sustain": 40,
+    "filterEnv.release": 120,
+    "amp.attack": 4,
+    "amp.decay": 350,
+    "amp.sustain": 60,
+    "amp.release": 110,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -4,
+    "fx.eq.midFreq": 2000,
+    "fx.eq.midGain": 2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.7,
+    "fx.reverb.mix": 10,
+    "preset.level": 7.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Mute",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Buzz",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.drive",
+          "deltaMin": -0.2,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.sustain",
+          "deltaMin": -0.4,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

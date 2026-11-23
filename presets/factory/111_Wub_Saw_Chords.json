@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "id": "feb7aa32-9e28-55da-a9ee-0665fc62523f",
+  "name": "Wub Saw Chords",
+  "category": "SuperSAW",
+  "tags": [
+    "Bright",
+    "Big",
+    "Wide",
+    "Motion",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "Hold a chord and the filter opens and closes on every eighth note, in time with the song. The swelling chords of future bass, with no sidechain to set up.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 38,
+    "osc.a.spread": 90,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "SuperSAW",
+    "osc.b.octave": 1,
+    "osc.b.unisonVoices": 5,
+    "osc.b.detune": 30,
+    "osc.b.spread": 100,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 900,
+    "filter.resonance": 8,
+    "filter.keyTrack": 40,
+    "amp.attack": 4,
+    "amp.decay": 800,
+    "amp.sustain": 92,
+    "amp.release": 200,
+    "sub.level": 22,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Square",
+    "lfo.wave": "Saw",
+    "lfo.sync": true,
+    "lfo.division": "1/8",
+    "lfo.retrigger": true,
+    "lfo.cutoff": 60,
+    "lfo.amp": 25,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 0.5,
+    "fx.chorus.depth": 35,
+    "fx.chorus.mix": 20,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 125,
+    "fx.imager.monoBass": true,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 2.2,
+    "fx.reverb.mix": 18,
+    "preset.level": 0.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Wub",
+      "mappings": [
+        {
+          "target": "lfo.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.b.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.18,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

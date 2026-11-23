@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "id": "f86fe752-9212-56bd-b000-93f692b977e8",
+  "name": "Acid Gate Pulse",
+  "category": "Trance Gate",
+  "tags": [
+    "Dark",
+    "Aggressive",
+    "Gate",
+    "Motion"
+  ],
+  "author": "POLYBRISK",
+  "description": "A resonant square line: the gate rolls in sixteenths while a saw LFO drops the filter once per bar. Play low, one or two notes.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Square",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": -1,
+    "osc.b.level": 55,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 700,
+    "filter.resonance": 58,
+    "filter.drive": 30,
+    "filter.keyTrack": 40,
+    "amp.attack": 1,
+    "amp.decay": 400,
+    "amp.sustain": 100,
+    "amp.release": 80,
+    "lfo.wave": "Saw",
+    "lfo.sync": true,
+    "lfo.division": "1 Bar",
+    "lfo.cutoff": 42,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 1.5,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tube Saturation",
+    "fx.drive.drive": 40,
+    "fx.drive.tone": 60,
+    "fx.drive.mix": 80,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 12,
+    "preset.level": -2.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Acid",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.4,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        },
+        {
+          "target": "lfo.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Tone",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Gate Depth",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Rolling 16",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+    ]
+  }
+}

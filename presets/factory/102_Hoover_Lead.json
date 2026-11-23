@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "id": "e9182ed3-029a-5b35-8fc4-d88e20ac03e6",
+  "name": "Hoover Lead",
+  "category": "Lead / Hook",
+  "tags": [
+    "Dark",
+    "Aggressive",
+    "Big",
+    "Classic",
+    "Wide",
+    "Motion",
+    "Mono"
+  ],
+  "author": "POLYBRISK",
+  "description": "Thick detuned pulses that swoop up into every note, with their width churning underneath. The growling rave lead; slides between overlapping notes.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 50,
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 34,
+    "osc.a.spread": 80,
+    "osc.a.unisonMix": 60,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": -1,
+    "osc.b.unisonVoices": 3,
+    "osc.b.detune": 22,
+    "osc.b.spread": 60,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 2400,
+    "filter.resonance": 10,
+    "filter.drive": 30,
+    "filter.keyTrack": 50,
+    "amp.attack": 4,
+    "amp.decay": 400,
+    "amp.sustain": 95,
+    "amp.release": 180,
+    "transient.enabled": true,
+    "transient.mode": "Pitch Snap",
+    "transient.amount": 100,
+    "transient.duration": 90,
+    "transient.pitchSnap": -12,
+    "voice.mode": "Legato",
+    "voice.glide": 70,
+    "lfo.wave": "Sine",
+    "lfo.rate": 4.5,
+    "lfo.pulseWidth": 60,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.6,
+    "fx.chorus.depth": 45,
+    "fx.chorus.mix": 30,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.midFreq": 1200,
+    "fx.eq.midGain": 2,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 1.8,
+    "fx.reverb.mix": 16,
+    "preset.level": 1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Swoop",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.8,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        },
+        {
+          "target": "transient.duration",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Churn",
+      "mappings": [
+        {
+          "target": "lfo.pulseWidth",
+          "deltaMin": -0.5,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "id": "217454a3-0aff-58a8-ba3e-9fde716990fc",
+  "name": "Shimmer Poly",
+  "category": "Bright Poly",
+  "tags": [
+    "Bright",
+    "Airy",
+    "Wide",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "High-passed supersaw with a sine two octaves up. Airy top layer over a fuller sound.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 20,
+    "osc.a.spread": 90,
+    "osc.a.unisonMix": 62,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Sine",
+    "osc.b.octave": 2,
+    "osc.b.level": 30,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "HP12",
+    "filter.cutoff": 180,
+    "filter.resonance": 5,
+    "filter.keyTrack": 20,
+    "amp.attack": 8,
+    "amp.decay": 1200,
+    "amp.sustain": 70,
+    "amp.release": 600,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 0.5,
+    "fx.chorus.depth": 45,
+    "fx.chorus.mix": 35,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 130,
+    "fx.imager.monoBass": true,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 15,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 4.0,
+    "fx.reverb.mix": 32,
+    "preset.level": -0.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Air",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.3,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Width",
+      "mappings": [
+        {
+          "target": "fx.imager.width",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.chorus.mix",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

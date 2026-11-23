@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "id": "9523f2e0-982e-564a-b98a-b24d07647d7a",
+  "name": "Metal Pluck",
+  "category": "Synth Pluck",
+  "tags": [
+    "Bright",
+    "Aggressive"
+  ],
+  "author": "POLYBRISK",
+  "description": "Resonant band-pass pluck with a pitch snap. Thin, metallic and percussive.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 22,
+    "osc.a.unisonVoices": 2,
+    "osc.a.detune": 10,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": 1,
+    "osc.b.level": 40,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "BP12",
+    "filter.cutoff": 2200,
+    "filter.resonance": 55,
+    "filter.envAmount": 40,
+    "filter.keyTrack": 70,
+    "filter.velocity": 30,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 110,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 100,
+    "amp.attack": 0.5,
+    "amp.decay": 260,
+    "amp.sustain": 0,
+    "amp.release": 160,
+    "transient.enabled": true,
+    "transient.mode": "Pitch Snap",
+    "transient.amount": 45,
+    "transient.duration": 14,
+    "transient.pitchSnap": 19,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/8 T",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 12,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.4,
+    "fx.reverb.mix": 18,
+    "preset.level": 12.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Tone",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Ring",
+      "mappings": [
+        {
+          "target": "filter.resonance",
+          "deltaMin": -0.4,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Snap",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.4,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.18,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

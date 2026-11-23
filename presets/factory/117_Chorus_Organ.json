@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "9e549208-ab24-57fb-8f7f-6386aae4950d",
+  "name": "Chorus Organ",
+  "category": "Bright Poly",
+  "tags": [
+    "Warm",
+    "Clean",
+    "Classic",
+    "Wide",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "A plain synth organ: full level the instant a key goes down, gone the instant it comes up, with a fast chorus swirling around it. Held chords and gliding riffs.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Sine",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Triangle",
+    "osc.b.octave": 1,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 9000,
+    "filter.keyTrack": 30,
+    "amp.attack": 1,
+    "amp.decay": 200,
+    "amp.sustain": 100,
+    "amp.release": 35,
+    "amp.velocity": 20,
+    "sub.level": 45,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Sine",
+    "transient.enabled": true,
+    "transient.mode": "Noise Burst",
+    "transient.amount": 18,
+    "transient.duration": 5,
+    "transient.noiseColor": 65,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tube Saturation",
+    "fx.drive.drive": 20,
+    "fx.drive.mix": 60,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 1.4,
+    "fx.chorus.depth": 50,
+    "fx.chorus.mix": 45,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 12,
+    "preset.level": -5.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Upper",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.5,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Swirl",
+      "mappings": [
+        {
+          "target": "fx.chorus.mix",
+          "deltaMin": -0.4,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.chorus.rate",
+          "deltaMin": -0.1,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Click",
+      "mappings": [
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.2,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Grit",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.2,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

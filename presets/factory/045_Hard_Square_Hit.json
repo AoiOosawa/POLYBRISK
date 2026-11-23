@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "2dc00ef7-da26-5058-b3a5-0f464352832c",
+  "name": "Hard Square Hit",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Dark",
+    "Aggressive",
+    "Big",
+    "Hollow",
+    "Layered",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "Dark, hard-clipped squares over a square sub. A heavy low hit for the downbeat.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Square",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 12,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 30,
+    "osc.b.octave": -1,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 700,
+    "filter.resonance": 10,
+    "filter.drive": 45,
+    "filter.envAmount": 30,
+    "filter.keyTrack": 30,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 260,
+    "filterEnv.sustain": 10,
+    "filterEnv.release": 180,
+    "amp.attack": 0.5,
+    "amp.decay": 480,
+    "amp.sustain": 0,
+    "amp.release": 180,
+    "sub.level": 65,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Square",
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Hard Clip",
+    "fx.drive.drive": 45,
+    "fx.drive.tone": 45,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": 3,
+    "fx.eq.highGain": -3,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 8,
+    "preset.level": -1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.4,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Sub",
+      "mappings": [
+        {
+          "target": "sub.level",
+          "deltaMin": -0.6,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

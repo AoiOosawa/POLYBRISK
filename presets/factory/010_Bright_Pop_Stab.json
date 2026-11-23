@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "770e953b-dc45-5ffa-b8d7-96c3d78d311c",
+  "name": "Bright Pop Stab",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Bright",
+    "Punchy",
+    "Tight"
+  ],
+  "author": "POLYBRISK",
+  "description": "Snappy chord stab: punch filter, fast envelope and a noise + pitch transient.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 5,
+    "osc.a.detune": 25,
+    "osc.a.spread": 70,
+    "osc.a.unisonMix": 35,
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 700,
+    "filter.resonance": 20,
+    "filter.drive": 30,
+    "filter.envAmount": 55,
+    "filter.keyTrack": 40,
+    "filter.velocity": 30,
+    "filterEnv.attack": 0.5,
+    "filterEnv.decay": 140,
+    "filterEnv.sustain": 0,
+    "filterEnv.release": 120,
+    "amp.attack": 0.5,
+    "amp.decay": 260,
+    "amp.sustain": 0,
+    "amp.release": 140,
+    "transient.enabled": true,
+    "transient.mode": "Both",
+    "transient.amount": 45,
+    "transient.duration": 18,
+    "transient.noiseColor": 60,
+    "transient.pitchSnap": 12,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Soft Clip",
+    "fx.drive.drive": 20,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.7,
+    "fx.reverb.mix": 14,
+    "preset.level": 3.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Punch",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "transient.amount",
+          "deltaMin": -0.1,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Length",
+      "mappings": [
+        {
+          "target": "amp.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.decay",
+          "deltaMin": -0.15,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.14,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

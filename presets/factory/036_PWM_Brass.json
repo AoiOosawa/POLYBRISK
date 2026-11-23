@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "id": "d6d0e298-d3a3-520d-9b35-e019576f6a06",
+  "name": "PWM Brass",
+  "category": "Synth Brass",
+  "tags": [
+    "Warm",
+    "Hollow",
+    "Classic",
+    "Motion",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "Pulse waves whose width is swept by the LFO. Hollower than saw brass, and it never sits still.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 30,
+    "osc.b.octave": 1,
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 2200,
+    "filter.resonance": 6,
+    "filter.envAmount": 24,
+    "filter.keyTrack": 55,
+    "filter.velocity": 40,
+    "filterEnv.attack": 25,
+    "filterEnv.decay": 380,
+    "filterEnv.sustain": 55,
+    "filterEnv.release": 220,
+    "amp.attack": 8,
+    "amp.decay": 400,
+    "amp.sustain": 88,
+    "amp.release": 200,
+    "sub.level": 20,
+    "sub.octave": "-1 Oct",
+    "sub.wave": "Square",
+    "lfo.wave": "Triangle",
+    "lfo.rate": 0.9,
+    "lfo.pulseWidth": 75,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.9,
+    "fx.reverb.mix": 12,
+    "preset.level": -5.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "PWM",
+      "mappings": [
+        {
+          "target": "lfo.pulseWidth",
+          "deltaMin": -0.5,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "lfo.rate",
+          "deltaMin": -0.05,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Attack",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.12,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "id": "ec0f0d8b-747e-5e21-ad4b-0c1717e379cf",
+  "name": "Dub Chord Stab",
+  "category": "Stab / Chord Hit",
+  "tags": [
+    "Dark",
+    "Classic",
+    "Wide"
+  ],
+  "author": "POLYBRISK",
+  "description": "A dark, muffled chord that barely speaks, then echoes away for bars, each repeat duller than the last. The chord of dub techno; play one and wait.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 16,
+    "osc.a.spread": 60,
+    "osc.a.unisonMix": 45,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 35,
+    "osc.b.level": 50,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 380,
+    "filter.resonance": 28,
+    "filter.drive": 20,
+    "filter.envAmount": 40,
+    "filter.keyTrack": 40,
+    "filter.velocity": 40,
+    "filterEnv.attack": 1,
+    "filterEnv.decay": 180,
+    "filterEnv.sustain": 10,
+    "filterEnv.release": 160,
+    "amp.attack": 1,
+    "amp.decay": 260,
+    "amp.sustain": 0,
+    "amp.release": 160,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.3,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 25,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/8 D",
+    "fx.delay.feedback": 68,
+    "fx.delay.tone": 30,
+    "fx.delay.mix": 42,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.5,
+    "fx.reverb.mix": 24,
+    "preset.level": 0.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Open",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.15,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.feedback",
+          "deltaMin": -0.3,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Dark Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.tone",
+          "deltaMin": -0.25,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

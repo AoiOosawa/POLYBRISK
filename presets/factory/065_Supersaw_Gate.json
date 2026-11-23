@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "80bec80e-0dc9-577b-a4ef-e54c7448c789",
+  "name": "Supersaw Gate",
+  "category": "Trance Gate",
+  "tags": [
+    "Bright",
+    "Big",
+    "Classic",
+    "Wide",
+    "Gate"
+  ],
+  "author": "POLYBRISK",
+  "description": "The classic pairing: a wide two-octave supersaw chopped by the Shifted Long pattern at 1/32. Hold a chord for 16th-note trance chops with two longer notes per half bar.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 9,
+    "osc.a.detune": 42,
+    "osc.a.spread": 100,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "SuperSAW",
+    "osc.b.octave": -1,
+    "osc.b.unisonVoices": 7,
+    "osc.b.detune": 34,
+    "osc.b.spread": 70,
+    "osc.b.level": 60,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 12000,
+    "filter.resonance": 6,
+    "filter.keyTrack": 40,
+    "amp.attack": 1,
+    "amp.decay": 600,
+    "amp.sustain": 100,
+    "amp.release": 180,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/32",
+    "gate.depth": 100,
+    "gate.smooth": 2.5,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -1.5,
+    "fx.eq.midFreq": 3200,
+    "fx.eq.midGain": 1.5,
+    "fx.eq.highGain": 3,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 125,
+    "fx.imager.monoBass": true,
+    "fx.delay.enabled": true,
+    "fx.delay.mode": "Ping Pong",
+    "fx.delay.division": "1/8",
+    "fx.delay.feedback": 30,
+    "fx.delay.mix": 14,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 2.6,
+    "fx.reverb.mix": 20,
+    "preset.level": 1.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.35,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Gate Depth",
+      "mappings": [
+        {
+          "target": "gate.depth",
+          "deltaMin": -0.7,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Smooth",
+      "mappings": [
+        {
+          "target": "gate.smooth",
+          "deltaMin": -0.05,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.14,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Shifted Long",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+    ]
+  }
+}

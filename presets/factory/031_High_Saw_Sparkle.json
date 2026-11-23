@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "ab2f5fb2-d930-5677-93e1-e509e0a505f9",
+  "name": "High Saw Sparkle",
+  "category": "SuperSAW",
+  "tags": [
+    "Bright",
+    "Airy",
+    "Wide",
+    "Layered"
+  ],
+  "author": "POLYBRISK",
+  "description": "High-passed supersaw one and two octaves up. A top layer only: it has no body on purpose.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.octave": 1,
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 32,
+    "osc.a.spread": 100,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "SuperSAW",
+    "osc.b.octave": 2,
+    "osc.b.unisonVoices": 5,
+    "osc.b.detune": 28,
+    "osc.b.spread": 100,
+    "osc.b.level": 40,
+    "osc.b.unisonMix": 70,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "HP12",
+    "filter.cutoff": 400,
+    "filter.resonance": 4,
+    "filter.keyTrack": 30,
+    "amp.attack": 10,
+    "amp.decay": 900,
+    "amp.sustain": 80,
+    "amp.release": 450,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Wide",
+    "fx.chorus.rate": 0.6,
+    "fx.chorus.depth": 40,
+    "fx.chorus.mix": 28,
+    "fx.eq.enabled": true,
+    "fx.eq.highGain": 3,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 140,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 2.4,
+    "fx.reverb.mix": 28,
+    "preset.level": -0.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Thin",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Shimmer",
+      "mappings": [
+        {
+          "target": "fx.chorus.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.eq.highGain",
+          "deltaMin": -0.1,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

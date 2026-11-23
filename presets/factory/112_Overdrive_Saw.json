@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "id": "fcdd75e8-c50a-5387-a900-d95f4d1f38f7",
+  "name": "Overdrive Saw",
+  "category": "SuperSAW",
+  "tags": [
+    "Bright",
+    "Aggressive",
+    "Big"
+  ],
+  "author": "POLYBRISK",
+  "description": "A supersaw pushed hard into a clipper until it screams: mid-heavy, flat and loud. Hard dance leads and two-note power intervals; full chords turn to mud.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "SuperSAW",
+    "osc.a.unisonVoices": 7,
+    "osc.a.detune": 34,
+    "osc.a.spread": 60,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Punch",
+    "filter.mode": "LP24",
+    "filter.cutoff": 6500,
+    "filter.resonance": 14,
+    "filter.drive": 50,
+    "filter.keyTrack": 30,
+    "amp.attack": 2,
+    "amp.decay": 600,
+    "amp.sustain": 90,
+    "amp.release": 150,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Hard Clip",
+    "fx.drive.drive": 62,
+    "fx.drive.tone": 60,
+    "fx.drive.mix": 90,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -2,
+    "fx.eq.midFreq": 2000,
+    "fx.eq.midGain": 4,
+    "fx.eq.highGain": -1,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Room",
+    "fx.reverb.decay": 0.8,
+    "fx.reverb.mix": 10,
+    "preset.level": -3.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Drive",
+      "mappings": [
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.4,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filter.drive",
+          "deltaMin": -0.3,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.drive.tone",
+          "deltaMin": -0.3,
+          "deltaMax": 0.2,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.a.unisonMix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Room",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

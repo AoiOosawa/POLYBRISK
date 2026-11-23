@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "9e297f80-19ff-5dde-8fb1-e9998da7f847",
+  "name": "Brass Swell",
+  "category": "Synth Brass",
+  "tags": [
+    "Warm",
+    "Slow",
+    "Dynamic"
+  ],
+  "author": "POLYBRISK",
+  "description": "A slow crescendo: the filter takes half a second to open, and aftertouch pushes it further. Long notes.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 3,
+    "osc.a.detune": 16,
+    "osc.a.spread": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.octave": -1,
+    "osc.b.level": 45,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 320,
+    "filter.resonance": 8,
+    "filter.envAmount": 55,
+    "filter.keyTrack": 50,
+    "filter.velocity": 30,
+    "filterEnv.attack": 550,
+    "filterEnv.decay": 1200,
+    "filterEnv.sustain": 80,
+    "filterEnv.release": 400,
+    "amp.attack": 120,
+    "amp.decay": 800,
+    "amp.sustain": 95,
+    "amp.release": 400,
+    "performance.vibratoDepth": 30,
+    "performance.vibratoDelay": 900,
+    "performance.aftertouchCutoff": 25,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.4,
+    "fx.chorus.depth": 30,
+    "fx.chorus.mix": 15,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 3.0,
+    "fx.reverb.mix": 24,
+    "preset.level": -2.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Swell Time",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.15,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.envAmount",
+          "deltaMin": -0.25,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Vibrato",
+      "mappings": [
+        {
+          "target": "performance.vibratoDepth",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Hall",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

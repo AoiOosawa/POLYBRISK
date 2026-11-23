@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "id": "9e558d77-3ff4-54e4-9d06-29068473e46a",
+  "name": "Arena Brass",
+  "category": "Synth Brass",
+  "tags": [
+    "Bright",
+    "Big",
+    "Classic"
+  ],
+  "author": "POLYBRISK",
+  "description": "Bright, open brass chords that speak at once and stay bright while held. The big keyboard-riff sound of eighties arena rock.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.unisonVoices": 4,
+    "osc.a.detune": 20,
+    "osc.a.spread": 70,
+    "osc.a.unisonMix": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.fine": -8,
+    "osc.b.level": 75,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 2600,
+    "filter.resonance": 6,
+    "filter.envAmount": 34,
+    "filter.keyTrack": 45,
+    "filter.velocity": 30,
+    "filterEnv.attack": 12,
+    "filterEnv.decay": 500,
+    "filterEnv.sustain": 72,
+    "filterEnv.release": 260,
+    "amp.attack": 4,
+    "amp.decay": 600,
+    "amp.sustain": 95,
+    "amp.release": 230,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Tape Saturation",
+    "fx.drive.drive": 18,
+    "fx.drive.mix": 60,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": 1,
+    "fx.eq.midFreq": 2800,
+    "fx.eq.midGain": 2,
+    "fx.eq.highGain": 2.5,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 115,
+    "fx.imager.monoBass": true,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.7,
+    "fx.reverb.preDelay": 20,
+    "fx.reverb.mix": 17,
+    "preset.level": -5.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.a.detune",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "osc.b.fine",
+          "deltaMin": -0.05,
+          "deltaMax": 0.08,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Attack",
+      "mappings": [
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.05,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.02,
+          "deltaMax": 0.15,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Plate",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.16,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

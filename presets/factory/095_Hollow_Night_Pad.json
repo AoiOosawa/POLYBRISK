@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "0c418c88-bb11-506b-b383-bd50703588d1",
+  "name": "Hollow Night Pad",
+  "category": "Pad / Strings",
+  "tags": [
+    "Dark",
+    "Hollow",
+    "Soft",
+    "Wide",
+    "Motion",
+    "Slow"
+  ],
+  "author": "POLYBRISK",
+  "description": "Two squares an octave apart, slightly out of tune, behind a low filter that drifts slowly on its own. A dark, hollow bed for verses and intros.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Square",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Square",
+    "osc.b.octave": -1,
+    "osc.b.fine": 7,
+    "osc.b.level": 65,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 520,
+    "filter.resonance": 14,
+    "filter.envAmount": 18,
+    "filter.keyTrack": 45,
+    "filterEnv.attack": 900,
+    "filterEnv.decay": 2500,
+    "filterEnv.sustain": 70,
+    "filterEnv.release": 1200,
+    "amp.attack": 350,
+    "amp.decay": 1500,
+    "amp.sustain": 95,
+    "amp.release": 1100,
+    "lfo.wave": "Sine",
+    "lfo.rate": 0.12,
+    "lfo.cutoff": 22,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.25,
+    "fx.chorus.depth": 35,
+    "fx.chorus.mix": 25,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Hall",
+    "fx.reverb.decay": 4.2,
+    "fx.reverb.mix": 30,
+    "fx.reverb.tone": 40,
+    "preset.level": -8.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Drift",
+      "mappings": [
+        {
+          "target": "lfo.cutoff",
+          "deltaMin": -0.2,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "lfo.rate",
+          "deltaMin": -0.02,
+          "deltaMax": 0.1,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Swell",
+      "mappings": [
+        {
+          "target": "amp.attack",
+          "deltaMin": -0.2,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        },
+        {
+          "target": "filterEnv.attack",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

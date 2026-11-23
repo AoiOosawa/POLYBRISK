@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "89dc6603-8f0d-5f6b-b850-9a00cfdfb8a4",
+  "name": "Deep Sub Bass",
+  "category": "Bass",
+  "tags": [
+    "Dark",
+    "Clean",
+    "Mix Ready",
+    "Mono",
+    "Dry"
+  ],
+  "author": "POLYBRISK",
+  "description": "A sine with a little triangle an octave up so it still reads on small speakers. Smooth legato glide. Sits under anything.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Sine",
+    "osc.a.phaseMode": "Retrigger",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Triangle",
+    "osc.b.octave": 1,
+    "osc.b.level": 25,
+    "osc.b.phaseMode": "Retrigger",
+    "filter.character": "Clean",
+    "filter.mode": "LP12",
+    "filter.cutoff": 700,
+    "filter.keyTrack": 50,
+    "amp.attack": 3,
+    "amp.decay": 400,
+    "amp.sustain": 90,
+    "amp.release": 120,
+    "voice.mode": "Legato",
+    "voice.glide": 60,
+    "fx.drive.enabled": true,
+    "fx.drive.type": "Warm Saturation",
+    "fx.drive.drive": 15,
+    "fx.drive.mix": 50,
+    "fx.imager.enabled": true,
+    "fx.imager.width": 50,
+    "fx.imager.monoBass": true,
+    "preset.level": 4.0
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Tone",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Harmonics",
+      "mappings": [
+        {
+          "target": "osc.b.level",
+          "deltaMin": -0.25,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.drive.drive",
+          "deltaMin": -0.15,
+          "deltaMax": 0.4,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Glide",
+      "mappings": [
+        {
+          "target": "voice.glide",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Release",
+      "mappings": [
+        {
+          "target": "amp.release",
+          "deltaMin": -0.1,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}

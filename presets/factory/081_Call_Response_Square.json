@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "id": "e2833a25-2aee-5786-99fe-ff220a0102a9",
+  "name": "Call Response Square",
+  "category": "Trance Gate",
+  "tags": [
+    "Warm",
+    "Hollow",
+    "Wide",
+    "Gate",
+    "Stereo",
+    "Motion"
+  ],
+  "author": "POLYBRISK",
+  "description": "A hollow square phrase on the left answered by the same chord on the right. Leave it alone for two bars and it plays a duet.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Pulse",
+    "osc.a.pulseWidth": 50,
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Pulse",
+    "osc.b.pulseWidth": 50,
+    "osc.b.octave": 1,
+    "osc.b.fine": 5,
+    "osc.b.level": 35,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Clean",
+    "filter.mode": "LP24",
+    "filter.cutoff": 2600,
+    "filter.resonance": 15,
+    "filter.keyTrack": 55,
+    "amp.attack": 2,
+    "amp.decay": 500,
+    "amp.sustain": 100,
+    "amp.release": 160,
+    "lfo.wave": "Sine",
+    "lfo.rate": 0.7,
+    "lfo.pulseWidth": 35,
+    "gate.enabled": true,
+    "gate.steps": "16",
+    "gate.rate": "1/16",
+    "gate.depth": 100,
+    "gate.smooth": 4,
+    "gate.width": 100,
+    "fx.delay.enabled": true,
+    "fx.delay.division": "1/4",
+    "fx.delay.feedback": 25,
+    "fx.delay.mix": 10,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.6,
+    "fx.reverb.mix": 16,
+    "preset.level": -3.0,
+    "gate.stereo": true
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.25,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "PWM",
+      "mappings": [
+        {
+          "target": "lfo.pulseWidth",
+          "deltaMin": -0.3,
+          "deltaMax": 0.5,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Gate Width",
+      "mappings": [
+        {
+          "target": "gate.width",
+          "deltaMin": -0.8,
+          "deltaMax": 0.0,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Echo",
+      "mappings": [
+        {
+          "target": "fx.delay.mix",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ],
+  "rhythm": {
+    "gatePatternName": "Call Response",
+    "gatePatternEdited": false,
+    "gatePattern": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "gatePatternRight": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0
+    ]
+  }
+}

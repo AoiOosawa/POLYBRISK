@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "id": "f09c7411-7688-56e2-958a-6bbfe1c1695b",
+  "name": "Classic Saw Poly",
+  "category": "Bright Poly",
+  "tags": [
+    "Bright",
+    "Classic",
+    "Mix Ready"
+  ],
+  "author": "POLYBRISK",
+  "description": "The everyday polysynth: two slightly detuned saws, a filter that opens a little on each note, and a touch of chorus. Sustained chords for almost any song.",
+  "parameters": {
+    "osc.a.enabled": true,
+    "osc.a.wave": "Saw",
+    "osc.a.phaseMode": "Free",
+    "osc.b.enabled": true,
+    "osc.b.wave": "Saw",
+    "osc.b.fine": 8,
+    "osc.b.level": 85,
+    "osc.b.phaseMode": "Free",
+    "filter.character": "Analog",
+    "filter.mode": "LP24",
+    "filter.cutoff": 3200,
+    "filter.resonance": 12,
+    "filter.envAmount": 24,
+    "filter.keyTrack": 50,
+    "filter.velocity": 30,
+    "filterEnv.attack": 3,
+    "filterEnv.decay": 600,
+    "filterEnv.sustain": 55,
+    "filterEnv.release": 300,
+    "amp.attack": 3,
+    "amp.decay": 800,
+    "amp.sustain": 85,
+    "amp.release": 300,
+    "fx.chorus.enabled": true,
+    "fx.chorus.type": "Classic",
+    "fx.chorus.rate": 0.6,
+    "fx.chorus.depth": 35,
+    "fx.chorus.mix": 22,
+    "fx.eq.enabled": true,
+    "fx.eq.lowGain": -1,
+    "fx.eq.highGain": 1.5,
+    "fx.reverb.enabled": true,
+    "fx.reverb.type": "Plate",
+    "fx.reverb.decay": 1.4,
+    "fx.reverb.mix": 14,
+    "preset.level": -1.5
+  },
+  "macros": [
+    {
+      "index": 1,
+      "name": "Bright",
+      "mappings": [
+        {
+          "target": "filter.cutoff",
+          "deltaMin": -0.3,
+          "deltaMax": 0.25,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Detune",
+      "mappings": [
+        {
+          "target": "osc.b.fine",
+          "deltaMin": -0.04,
+          "deltaMax": 0.08,
+          "curve": "linear"
+        },
+        {
+          "target": "fx.chorus.mix",
+          "deltaMin": -0.15,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Release",
+      "mappings": [
+        {
+          "target": "amp.release",
+          "deltaMin": -0.15,
+          "deltaMax": 0.35,
+          "curve": "linear"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Space",
+      "mappings": [
+        {
+          "target": "fx.reverb.mix",
+          "deltaMin": -0.14,
+          "deltaMax": 0.3,
+          "curve": "linear"
+        }
+      ]
+    }
+  ]
+}
