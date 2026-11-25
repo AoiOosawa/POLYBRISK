@@ -58,8 +58,13 @@ PresetManager::PresetManager (juce::AudioProcessorValueTreeState& state, MetaSta
 
 juce::File PresetManager::defaultRoot()
 {
+#if JUCE_WINDOWS
+    return juce::File::getSpecialLocation (juce::File::userDocumentsDirectory)
+               .getChildFile ("CHEEBOW").getChildFile ("POLYBRISK");
+#else
     return juce::File::getSpecialLocation (juce::File::userApplicationDataDirectory)
                .getChildFile ("Application Support").getChildFile ("POLYBRISK");
+#endif
 }
 
 int PresetManager::getNumEmbeddedPresets()
