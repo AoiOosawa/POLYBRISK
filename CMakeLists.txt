@@ -33,6 +33,11 @@ FetchContent_Declare(JUCE
     DOWNLOAD_EXTRACT_TIMESTAMP TRUE)
 FetchContent_MakeAvailable(JUCE)
 
+# Windows (MSVC): ソースは UTF-8 (日本語のコメントを含む)。この指定がないと、Windows が文字を読み違える。
+if(MSVC)
+    add_compile_options(/utf-8)
+endif()
+
 # ---------------------------------------------------------------------------
 # polybrisk_dsp: JUCE / UI / ファイルI/O / JSON に依存しない純粋な C++ DSP
 # ---------------------------------------------------------------------------
@@ -45,7 +50,13 @@ add_library(polybrisk_dsp STATIC
     src/synth/Unison.cpp
     src/synth/Voice.cpp)
 target_include_directories(polybrisk_dsp PUBLIC src)
-target_compile_options(polybrisk_dsp PRIVATE -Wall -Wextra -Wpedantic -Wshadow -Wconversion)
+if(MSVC)
+    # MSVC には -Wextra などの指定がない。Windows では /W4 を使い、M_PI などの数学の定数も使えるようにする。
+    target_compile_options(polybrisk_dsp PRIVATE /W4)
+    target_compile_definitions(polybrisk_dsp PRIVATE _USE_MATH_DEFINES)
+else()
+    target_compile_options(polybrisk_dsp PRIVATE -Wall -Wextra -Wpedantic -Wshadow -Wconversion)
+endif()
 set_target_properties(polybrisk_dsp PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 # ---------------------------------------------------------------------------
